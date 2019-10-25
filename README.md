@@ -174,4 +174,6 @@
 <a name="сии"><h2>Список использованных источников</h2></a>
 ----------------------
 
-![alt-текст]("Текст заголовка логотипа 1")
+![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_1.png "Текст заголовка логотипа 1")
+![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_2.png "Текст заголовка логотипа 1")
+![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_3.png "Текст заголовка логотипа 1")
