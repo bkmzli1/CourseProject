@@ -178,6 +178,6 @@
 <a name="A"><h2>A</h2></a>
 ----------------------
 
-![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_1.png "Текст заголовка логотипа 1")
-![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_2.png "Текст заголовка логотипа 1")
-![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_3.png "Текст заголовка логотипа 1")
+![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_1.png "Коэффицент текучести кадров")
+![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_2.png "Выбор")
+![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_3.png "Решение примеров")
