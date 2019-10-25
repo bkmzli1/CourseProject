@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'edu.sc.seis.launch4j' version '2.4.6'
+}
+
+launch4j {
+    mainClassName = 'ru.bkmz.notebook.Main'
+    outfile = "notebook 1.1.1.4V.exe"
+    version = "1.1.1.4"
+    textVersion = "1.1.1.4"
+    companyName = "BkzmLitel"
+    copyright = "BkzmLitel"
+    launch4j.language = 'RUSSIAN'
+    launch4j.icon = "B:\\fon1 (1).ico"
+    //launch4j.jreMinVersion = "1.8.0_221"
+    internalName = "notebook"
+}
+
+apply plugin: "edu.sc.seis.launch4j"
+group 'kurs'
+version '0.0.0.1'
+compileJava.options.encoding = "UTF-8"
+sourceCompatibility = 1.8
+
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+//    implementation 'org.controlsfx:controlsfx:11.0.0'
+//    compile 'org.controlsfx:controlsfx:11.0.0'
+}
+jar {
+    exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    manifest {
+        attributes(
+                'Class-Path': configurations.runtime.files.collect { "lib/$it.name" }.join(' '),
+                'Main-Class': 'ru.bkmz.notebook.Main'
+        )
+
+    }
+}
