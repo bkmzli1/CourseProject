@@ -33,6 +33,7 @@ public class MainController {
 
         functionSheet.setItems(planetObservableList);
 
+
         functionSheet.getSelectionModel().selectedItemProperty().addListener(changeListener);
         functionSheet.setValue(planetObservableList.get(0));
 

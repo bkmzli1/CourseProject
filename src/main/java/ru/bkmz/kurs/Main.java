@@ -21,7 +21,7 @@ public class Main extends Application {
                 stage, "kurs");
         stage = stageStandart.getStage();
         stage.setMinWidth(881);
-        stage.setMinHeight(242);
+        stage.setMinHeight(265);
         Main.stageStandart.getStage().setMaxHeight(399);
 
     }

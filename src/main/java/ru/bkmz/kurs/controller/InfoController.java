@@ -22,8 +22,9 @@ public class InfoController {
         WrappedImageView imageGitV = new WrappedImageView(imageGit);
 
         vBoxGit.getChildren().set(0, imageGitV);
-        imageAetherV.setPreserveRatio(false);
-        imageGitV.setPreserveRatio(false);
+        imageAetherV.setPreserveRatio(true);
+        imageGitV.setPreserveRatio(true);
+
     }
 
     public void aether(ActionEvent actionEvent) {

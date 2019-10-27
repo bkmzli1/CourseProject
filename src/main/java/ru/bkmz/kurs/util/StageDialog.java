@@ -47,7 +47,7 @@ public class StageDialog {
         scene.getStylesheets().add(getClass().getClassLoader().getResource("css\\main.css").toExternalForm());
         newWindow.setScene(scene);
         newWindow.setWidth(598);
-        newWindow.setHeight(317);
+        newWindow.setHeight(360);
         newWindow.setResizable(false);
 
         newWindow.show();

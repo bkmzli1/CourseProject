@@ -385,8 +385,6 @@ public class Functions {
 
     private TextArea textAreaBuild(String value) {
         TextArea textArea = new TextArea(value);
-        textArea.setMaxHeight(Double.MAX_VALUE);
-        textArea.setMaxWidth(Double.MAX_VALUE);
         textArea.setEditable(false);
         textArea.setWrapText(true);
         return textArea;
@@ -395,6 +393,7 @@ public class Functions {
     private TextField textFieldBuild(String value, String promptText) {
         TextField textField = new TextField(value);
         textField.setPromptText(promptText);
+        VBox.setVgrow(textField, Priority.ALWAYS);
         //textField.setId("text");
         textProperty(textField);
         return textField;
