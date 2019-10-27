@@ -5,20 +5,19 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.VBox;
 import ru.bkmz.kurs.util.Functions;
 import ru.bkmz.kurs.util.Planet;
 import ru.bkmz.kurs.util.PlanetDAO;
+import ru.bkmz.kurs.util.StageDialog;
 
 
 public class MainController {
     public ComboBox<Planet> functionSheet;
     public Button score;
-
     public VBox vBox;
-
+   static StageDialog stageDialog;
 
     public void initialize() {
 
@@ -47,6 +46,11 @@ public class MainController {
         PlanetDAO.load("Кд", "Коэффициент динамики числа занятых сотрудников");
         PlanetDAO.load("Кпк", "Коэффициент приема кадров");
         PlanetDAO.load("Квк", "Коэффициент выбытия кадров");
+        PlanetDAO.load("ргппк", "Расчета годового процента по кредиту");
+        PlanetDAO.load("пск", "Полная стоимость кредита");
+        PlanetDAO.load("ркап", "Расчета кредита аннуитетными платежами");
+
+
         PlanetDAO.load("all", "Решение примеров");
 
 
@@ -59,4 +63,11 @@ public class MainController {
 
     }
 
+    public void close(ActionEvent actionEvent) {
+        System.exit(0);
+    }
+
+    public void about(ActionEvent actionEvent) {
+        stageDialog = new StageDialog();
+    }
 }

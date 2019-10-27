@@ -26,7 +26,7 @@ public class StageStandart extends Stage {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        stage = new Stage();
+        stage = stage;
 
         stage.setMaximized(follScren);
 
@@ -37,7 +37,7 @@ public class StageStandart extends Stage {
         scene.getStylesheets().add(getClass().getClassLoader().getResource("css\\main.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle(nameStage);
-        InputStream inputStream = ClassLoader.class.getResourceAsStream("/img/fon1.png");
+        InputStream inputStream = ClassLoader.class.getResourceAsStream("/image/fon icon.png");
         try {
             Image image = new Image(inputStream);
             stage.getIcons().add(image);

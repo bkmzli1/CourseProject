@@ -14,7 +14,6 @@ public class PlanetDAO {
     }
 
     public static void load(String code, String name) {
-        System.out.println("-Расчёт "+name.toLowerCase());
         Planet earth = new Planet(code, name);
         arrayList.add(earth);
         reload();

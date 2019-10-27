@@ -13,6 +13,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ru.bkmz.kurs.Main;
 
+import static ru.bkmz.kurs.util.RegularExpressions.expression;
+
 
 public class Functions {
     private static Stage stage = Main.stage;
@@ -32,23 +34,105 @@ public class Functions {
             case "Кст":
                 Kct();
                 break;
-
             case "Кд":
                 Kd();
                 break;
-
             case "Кпк":
                 Kpk();
                 break;
-
             case "Квк":
                 Kvk();
                 break;
             case "all":
                 all();
                 break;
+            case "ргппк":
+                prppk();
+                break;
+            case "пск":
+                psc();
+                break;
+            case "ркап":
+                rkap();
+                break;
 
         }
+
+
+    }
+
+    private void rkap() {
+        TextArea inf = textAreaBuild("Аннуитетные платежи отличаются тем, что клиент выплачивает задолженность равными долями.\n" +
+                "Размер ежемесячного платежа = СЗ*(П+(П/(1+П)*СК-1)), где\n" +
+                "\n" +
+                "СЗ — сумма займа;\n" +
+                "\n" +
+                "П — ставка процента за один месяц;\n" +
+                "\n" +
+                "СК — срок кредитования.");
+        out = textBuild("= ");
+        HBox hBox = new HBox(10);
+        vBox.getChildren().addAll(hBox,inf);
+    }
+
+    /**
+     * ПСК
+     * Полная стоимость кредита — это и есть та самая величина, отражающая все затраты заемщика, которые он понесет в процессе уплаты основного долга по кредиту. Раньше эту информацию банк старался умалчивать, дабы клиент не передумал оформлять кредит. Однако, согласно закону от 2014 года, банк обязуется указывать эту сумму на первой странице кредитного договора и на обязательном графике платежей. Причем размер этой записи должен быть максимально большим, дабы избежать дальнейших недоразумений.
+     * <p>
+     * Рассчитать этот показатель можно по простой формуле:
+     * <p>
+     * ПСК=СК+СВК+%, где:
+     * <p>
+     * СК — сумма кредита;
+     * СВК — сумма всех комиссий (разовых и ежемесячных);
+     * % — проценты по кредиту.
+     */
+    private void psc() {
+        TextArea inf = textAreaBuild("Полная стоимость кредита — это и есть та самая величина, отражающая все затраты заемщика, которые он понесет в процессе уплаты основного долга по кредиту. Раньше эту информацию банк старался умалчивать, дабы клиент не передумал оформлять кредит. Однако, согласно закону от 2014 года, банк обязуется указывать эту сумму на первой странице кредитного договора и на обязательном графике платежей. Причем размер этой записи должен быть максимально большим, дабы избежать дальнейших недоразумений.\n" +
+                "Рассчитать этот показатель можно по простой формуле:\n" +
+                "ПСК=СК+СВК+%, где:\n" +
+                "СК — сумма кредита;\n" +
+                "СВК — сумма всех комиссий (разовых и ежемесячных);\n" +
+                "% — проценты по кредиту.");
+        out = textBuild("= ");
+        HBox hBox = new HBox(10);
+        Text t1 = textBuild("ПСК="),
+                t2 = textBuild("+"),
+                t3 = textBuild("+");
+        TextField ck = textFieldBuild("", "СК"),
+                cvk = textFieldBuild("", "CDR"),
+                pr = textFieldBuild("", "%");
+        score.setOnMouseClicked(event -> {
+            double dck = expression(ck);
+            double dcvk = expression(cvk);
+            double dpr = expression(pr);
+
+            out.setText("= " + (dck + dcvk + dpr));
+        });
+        hBox.getChildren().addAll(t1, ck, t2, cvk, t3, pr, out);
+        vBox.getChildren().addAll(hBox, inf);
+    }
+
+    /**
+     * https://jcredit-online.ru/info/formula_rascheta_procentov_po_kreditu_legko_i_prosto
+     */
+    private void prppk() {
+        TextArea inf = textAreaBuild("S = Sз * i * Kк / Kг S - в целом все проценты, которые мы вычисляем;\n" +
+                "Sз - размер кредита, исключая первый взнос, если таковой имеется;\n" +
+                "i - годовая ставка в процентах, например 15% годовых;\n" +
+                "Kк - число дней, которые вы будете платить кредит;\n" +
+                "Kг - число дней в этом году.");
+        out = textBuild("= ");
+        HBox hBox = new HBox(10);
+        Text t1 = textBuild("S = "), t2 = textBuild("*"), t3 = textBuild("*"), t4 = textBuild("/");
+        TextField S3 = textFieldBuild("", "S3"), i = textFieldBuild("", "i"),
+                Kk = textFieldBuild("", "Кк"), Kr = textFieldBuild("", "Кг");
+        hBox.getChildren().addAll(t1, S3, t2, i, t3, Kk, t4, Kr, out);
+        score.setOnMouseClicked(event -> {
+
+            out.setText("= " + expression("(" + S3.getText() + ")" + t2.getText() + "(" + i.getText() + ")" + t3.getText() + "(" + Kk.getText() + ")" + t4.getText() + "(" + Kr.getText() + ")"));
+        });
+        vBox.getChildren().addAll(hBox, inf);
 
 
     }
@@ -83,15 +167,15 @@ public class Functions {
         TextField chp = textFieldBuild("", "Чп");
         Text t2 = textBuild("-");
         TextField chy = textFieldBuild("", "Чу");
-        Text t3 = textBuild(") :"   );
+        Text t3 = textBuild(") :");
         TextField chobj = textFieldBuild("", "");
         Text t4 = textBuild("X 100 =");
         hBox.getChildren().addAll(t1, chp, t2, chy, t3, chobj, t4, out);
         vBox.getChildren().addAll(hBox, inf);
         score.setOnMouseClicked(event -> {
-            double dchp = Double.valueOf(chp.getText()),
-                    dchy = Double.parseDouble(chy.getText()),
-                    dchobj = Double.parseDouble(chobj.getText());
+            double dchp = expression("(" + chp.getText() + ")"),
+                    dchy = expression("(" + chy.getText() + ")"),
+                    dchobj = expression("(" + chobj.getText() + ")");
             out.setText(String.valueOf((dchp - dchy) / dchobj * 100));
         });
     }
@@ -126,8 +210,8 @@ public class Functions {
         hBox2.getChildren().addAll(t1, chp, t2, chc, t3, out);
         vBox.getChildren().addAll(hBox2, inf);
         score.setOnMouseClicked(event -> {
-            double dchp = Double.valueOf(chp.getText()),
-                    dchy = Double.parseDouble(chc.getText());
+            double dchp = expression("(" + chp.getText() + ")"),
+                    dchy = expression("(" + chc.getText() + ")");
             out.setText(String.valueOf((dchp / dchy) * 100));
         });
 
@@ -157,8 +241,8 @@ public class Functions {
         Text t3 = textBuild(") X 100 =");
         hBox.getChildren().addAll(t1, chy, t2, chs, t3, out);
         score.setOnMouseClicked(event -> {
-            double dchp = Double.valueOf(chy.getText()),
-                    dchy = Double.parseDouble(chs.getText());
+            double dchp = expression("(" + chy.getText() + ")"),
+                    dchy = expression("(" + chs.getText() + ")");
             out.setText(String.valueOf((dchp / dchy) * 100));
         });
         vBox.getChildren().addAll(hBox, inf);
@@ -176,21 +260,13 @@ public class Functions {
         all.setMaxWidth(Double.MAX_VALUE);
         all.prefWidth(Double.MAX_VALUE);
         all.setPromptText("Введите уровнение пример ((1 + 2)*5  - 15 * 8)*7 + 12*(34 - 4)/(7 + 8)");
-        all.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (!newValue.matches("[\\d*,.()*/+-:]")) {
-                    all.setText(newValue.replaceAll("[^\\d,.*/+()-:]", ""));
-                }
-            }
-        });
         Text t1 = textBuild("=");
         hBox.getChildren().addAll(all, t1, out);
         vBox.getChildren().addAll(hBox, inf);
         score.setOnMouseClicked(event -> {
-            RegularExpressions regularExpressions = new RegularExpressions(inf);
-            out.setText(String.valueOf(regularExpressions.expression(all.getText().replace(":", "/"))));
-            inf.setText(inf.getText() + "\n" + out.getText());
+
+            out.setText(String.valueOf(expression(all.getText().replace(":", "/"))));
+            inf.setText(inf.getText() + "\n" + out.getText() + ")");
 
         });
     }
@@ -227,8 +303,8 @@ public class Functions {
         vBox.getChildren().addAll(hBox, inf);
         score.setOnMouseClicked(event -> {
 
-            double dChr = Double.parseDouble(chr.getText()),
-                    dChob = Double.parseDouble(chob.getText());
+            double dChr = expression("(" + chr.getText() + ")"),
+                    dChob = expression("(" + chob.getText() + ")");
             out.setText((dChr / dChob) * 100 + "");
 
         });
@@ -276,9 +352,9 @@ public class Functions {
 
 
             try {
-                double dChusah = Double.valueOf(chusah.getText()),
-                        dChusa = Double.valueOf(chusa.getText()),
-                        dChs = Double.valueOf(chs.getText());
+                double dChusah = expression("(" + chusah.getText() + ")"),
+                        dChusa = expression("(" + chusa.getText() + ")"),
+                        dChs = expression("(" + chs.getText() + ")");
                 double d = (dChusah + dChusa) / dChs * 100;
                 out.setText("" + d);
             } catch (NumberFormatException NFE) {
@@ -322,8 +398,8 @@ public class Functions {
         textField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (!newValue.matches("[\\d*,.]")) {
-                    textField.setText(newValue.replaceAll("[^\\d,.]", ""));
+                if (!newValue.matches("[\\d*,.()*/+-:]")) {
+                    textField.setText(newValue.replaceAll("[^\\d,.*/+()-:]", ""));
                 }
             }
         });
@@ -332,11 +408,20 @@ public class Functions {
 }
 
 class RegularExpressions {
-    static TextArea inf;
+    public static double expression(TextField TFstr) {
+        String str = TFstr.getText();
+        //Удаляем внешние пробелы. Из-за рекурсии удаляются все пробелы, кроме таких "5 5+7"
+        str = str.trim();
+        // кривой способ удаления всех внешних скобок
+        while ((str = removeOuterBrackets(str)) != removeOuterBrackets(str)) ;
+        //конец рекурсии, если блок содержит только число
+        if (isNumber(str)) {
+            return Double.parseDouble(str);
+        }
 
-    public RegularExpressions(TextArea inf) {
-        inf.setText("");
-        this.inf = inf;
+
+        //вызываем метод, который делит строку на два блока, делает  вызов expression() внутри и так пока не наткнемся на блок, состоящий только из числа
+        return splicing(str);
     }
 
     public static double expression(String str) {
@@ -360,7 +445,7 @@ class RegularExpressions {
         String block1, block2;
         block1 = str.substring(0, splice);
         block2 = str.substring(splice + 1);
-        inf.setText(inf.getText() + block1 + str.charAt(splice) + block2 + "\n");
+
         //тут происходит вызов expression() и так будет происходить, пока мы не получим только число в блоке
         //потом блоки будут склеиваться снизу вверх
         switch (str.charAt(splice)) {
@@ -393,7 +478,7 @@ class RegularExpressions {
                 }
             }
             if (count != 0) {
-                inf.setText(inf.getText() + "Brakets! (()" + "\n");
+
                 throw new IllegalArgumentException("Brakets! (()");
             }
             return str.substring(1, str.length() - 1); //возвращаем строку без одних внешних скобок
@@ -434,10 +519,10 @@ class RegularExpressions {
             }
         }
         if (count != 0) {
-            inf.setText(inf.getText() + "Brakets! (()" + "\n");
+
             throw new IllegalArgumentException("Brakets! (()");
         } else if (count == 0) {
-            inf.setText(inf.getText() + "symbols||spaces between numbers||double operators|| *) /) (+ etc");
+
             throw new IllegalArgumentException("symbols||spaces between numbers||double operators|| *) /) (+ etc");
         }
         return 0; //никогда сюда не попадем
@@ -453,7 +538,7 @@ class RegularExpressions {
                 break;
         }
         if (count < 0) {
-            inf.setText(inf.getText() + "Brakets! (()" + "\n");
+
             throw new IllegalArgumentException("Brackets! )(");
         }
         return count;
@@ -463,6 +548,4 @@ class RegularExpressions {
         //TODO конвертация строки 1/7/5*2 -> 1*2/(7*5)
         return 0;
     }
-
-
 }

@@ -14,11 +14,12 @@ import java.io.InputStream;
 import java.util.Objects;
 
 public class StageDialog {
-    StageDialog() {
+    Stage newWindow = new Stage();
+    public StageDialog() {
         StackPane secondaryLayout = new StackPane();
 
-        Stage newWindow = new Stage();
-        Scene secondScene = new Scene(secondaryLayout, 230, 100);
+
+        Scene secondScene = new Scene(secondaryLayout, 598, 317);
         newWindow.setScene(secondScene);
         newWindow.initModality(Modality.APPLICATION_MODAL);
         // Specifies the modality for new window.
@@ -34,12 +35,31 @@ public class StageDialog {
             e.printStackTrace();
         }
         Parent root = loader.getRoot();
-        InputStream inputStream = ClassLoader.class.getResourceAsStream("/img/fon1.png");
-        Image image = new Image(inputStream);
-        newWindow.getIcons().add(image);
-        newWindow.setScene(new Scene(root));
+        InputStream inputStream = ClassLoader.class.getResourceAsStream("/image/fon icon.png");
+        try {
+            Image image = new Image(inputStream);
+            newWindow.getIcons().add(image);
+        } catch (NullPointerException e) {
+            System.out.println("icon null");
+        }
+
+        Scene scene =new Scene(root);
+        scene.getStylesheets().add(getClass().getClassLoader().getResource("css\\main.css").toExternalForm());
+        newWindow.setScene(scene);
+        newWindow.setWidth(598);
+        newWindow.setHeight(317);
         newWindow.setResizable(false);
+
         newWindow.show();
 
+
+    }
+
+    public Stage getNewWindow() {
+        return newWindow;
+    }
+
+    public void setNewWindow(Stage newWindow) {
+        this.newWindow = newWindow;
     }
 }
