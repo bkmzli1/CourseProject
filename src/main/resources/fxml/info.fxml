@@ -15,13 +15,13 @@
                 <VBox fx:id="vBoxAether" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                     <children>
                         <ImageView fitHeight="254.0" fitWidth="292.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="developers:BkmzLitel" VBox.vgrow="ALWAYS" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Developers:BkmzLitel" VBox.vgrow="ALWAYS" />
                     </children>
                 </VBox>
                 <VBox fx:id="vBoxGit" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                     <children>
                         <ImageView fitHeight="254.0" fitWidth="292.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="git:bkmzli1" VBox.vgrow="ALWAYS" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Git:bkmzli1" VBox.vgrow="ALWAYS" />
                     </children>
                 </VBox>
             </children>
