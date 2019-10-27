@@ -4,10 +4,10 @@ plugins {
 }
 
 launch4j {
-    mainClassName = 'ru.bkmz.notebook.Main'
-    outfile = "notebook 1.1.1.4V.exe"
-    version = "1.1.1.4"
-    textVersion = "1.1.1.4"
+    mainClassName = 'ru.bkmz.kurs.Main'
+    outfile = "kurs 1.1.1.1V.exe"
+    version = "1.1.1.1"
+    textVersion = "1.1.1.1"
     companyName = "BkzmLitel"
     copyright = "BkzmLitel"
     launch4j.language = 'RUSSIAN'
@@ -18,7 +18,7 @@ launch4j {
 
 apply plugin: "edu.sc.seis.launch4j"
 group 'kurs'
-version '0.0.0.1'
+version '1.1.1.1'
 compileJava.options.encoding = "UTF-8"
 sourceCompatibility = 1.8
 
@@ -40,7 +40,7 @@ jar {
     manifest {
         attributes(
                 'Class-Path': configurations.runtime.files.collect { "lib/$it.name" }.join(' '),
-                'Main-Class': 'ru.bkmz.notebook.Main'
+                'Main-Class': 'ru.bkmz.kurs.Main'
         )
 
     }
