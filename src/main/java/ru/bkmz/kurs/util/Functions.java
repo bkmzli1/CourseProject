@@ -21,7 +21,21 @@ public class Functions {
     VBox vBox;
     Text out;
     Button score;
+    /*TODO
+       1.дописать https://www.sravni.ru/enciklopediya/info/formula-rascheta-kredita/ Формула расчета кредита аннуитетными платежами
+       2. добавить формулы:
+       http://www.ereport.ru/articles/macro/macro20.htm
+       https://www.berdov.com/ege/credit/osnovnaya-formula/
+       https://www.goodstudents.ru/bank/461-econnormativy.html
+       http://dgunh.ru/content/umd/umd_econ_sfit_spo_osnovyecon.pdf (дофига формул)
+     */
 
+
+    /**
+     * @param value - значение
+     * @param vBox  - коробка
+     * @param score - кнопка
+     */
     public Functions(ObservableValue<? extends Planet> value, VBox vBox, Button score) {
         this.vBox = vBox;
 
@@ -72,7 +86,7 @@ public class Functions {
                 "СК — срок кредитования.");
         out = textBuild("= ");
         HBox hBox = new HBox(10);
-        vBox.getChildren().addAll(hBox,inf);
+        vBox.getChildren().addAll(hBox, inf);
     }
 
     /**
