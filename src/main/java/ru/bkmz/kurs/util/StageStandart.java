@@ -20,13 +20,13 @@ public class StageStandart extends Stage {
     public StageStandart(String name, boolean follScren, Stage stage, String nameStage) {
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml\\" + name + ".fxml")));
+        loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/" + name + ".fxml")));
         try {
             loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        stage = stage;
+        stage = new Stage();
 
         stage.setMaximized(follScren);
 
@@ -34,7 +34,7 @@ public class StageStandart extends Stage {
         Parent root = loader.getRoot();
         Scene scene = new Scene(root);
 
-        scene.getStylesheets().add(getClass().getClassLoader().getResource("css\\main.css").toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getClassLoader().getResource("css/main.css")).toExternalForm());
         stage.setScene(scene);
         stage.setTitle(nameStage);
         InputStream inputStream = ClassLoader.class.getResourceAsStream("/image/fon icon.png");
