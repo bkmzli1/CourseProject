@@ -1,5 +1,6 @@
-package ru.bkmz.kurs.util;
+package ru.bkmz.kurs.util.Stage;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -7,7 +8,9 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import ru.bkmz.kurs.Main;
+import ru.bkmz.kurs.controller.InfoController;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -44,12 +47,16 @@ public class StageDialog {
         }
 
         Scene scene =new Scene(root);
-        scene.getStylesheets().add(getClass().getClassLoader().getResource("css\\main.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getClassLoader().getResource("css\\inf.css").toExternalForm());
         newWindow.setScene(scene);
-        newWindow.setWidth(598);
-        newWindow.setHeight(360);
+        newWindow.setWidth(590);
+        newWindow.setHeight(590-10);
         newWindow.setResizable(false);
+        newWindow.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            public void handle(WindowEvent we) {
 
+            }
+        });
         newWindow.show();
 
 

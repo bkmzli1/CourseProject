@@ -1,4 +1,4 @@
-package ru.bkmz.kurs.util;
+package ru.bkmz.kurs.util.Plant;
 
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;

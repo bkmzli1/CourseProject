@@ -7,10 +7,10 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.VBox;
-import ru.bkmz.kurs.util.Functions;
-import ru.bkmz.kurs.util.Planet;
-import ru.bkmz.kurs.util.PlanetDAO;
-import ru.bkmz.kurs.util.StageDialog;
+import ru.bkmz.kurs.util.logik.Functions;
+import ru.bkmz.kurs.util.Plant.Planet;
+import ru.bkmz.kurs.util.Plant.PlanetDAO;
+import ru.bkmz.kurs.util.Stage.StageDialog;
 
 
 public class MainController {
@@ -52,7 +52,7 @@ public class MainController {
         PlanetDAO.load("ркап", "Расчета кредита аннуитетными платежами");
 
 
-        PlanetDAO.load("all", "Решение примеров");
+      //  PlanetDAO.load("all", "Решение примеров");
 
 
         ObservableList<Planet> list = PlanetDAO.getPlanetList();

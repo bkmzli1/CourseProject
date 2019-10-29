@@ -1,4 +1,4 @@
-package ru.bkmz.kurs.util;
+package ru.bkmz.kurs.util.logik;
 
 
 import javafx.beans.value.ChangeListener;
@@ -12,8 +12,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ru.bkmz.kurs.Main;
+import ru.bkmz.kurs.util.Plant.Notification;
+import ru.bkmz.kurs.util.Plant.Planet;
 
-import static ru.bkmz.kurs.util.RegularExpressions.expression;
+import java.util.ArrayList;
+
+import static ru.bkmz.kurs.util.logik.RegularExpressions.expression;
 
 
 public class Functions {
@@ -21,6 +25,7 @@ public class Functions {
     VBox vBox;
     Text out;
     Button score;
+    ArrayList<String> listInf = new ArrayList<>();
     /*TODO
        1.дописать https://www.sravni.ru/enciklopediya/info/formula-rascheta-kredita/ Формула расчета кредита аннуитетными платежами
        2. добавить формулы:
@@ -41,7 +46,9 @@ public class Functions {
 
         this.score = score;
         this.vBox.getChildren().clear();
-        switch (value.getValue().code) {
+
+
+       /* switch (value.getValue().code) {
             case "Кт":
                 Kt();
                 break;
@@ -70,19 +77,120 @@ public class Functions {
                 rkap();
                 break;
 
-        }
+        }*/
+        listInfLoad();
 
+        switch (value.getValue().code) {
+            case "Кт":
+
+                new BuilderFunction("Кт=((,Чусж,+,Чуиа,):,Чс,)×100", this.score, listInf.get(0), vBox);
+
+                break;
+            case "Кст":
+                new BuilderFunction("Кст=(,Чр,:,Чоб,)×100", this.score, listInf.get(1), vBox);
+                break;
+            case "Кд":
+                new BuilderFunction("Кд=((,Чп,-,Чу,):,Чобщ,)×100", this.score, listInf.get(2), vBox);
+                break;
+            case "Кпк":
+                new BuilderFunction("Кпк=(,Чп,:,Чс,)×100 ", this.score, listInf.get(3), vBox);
+                break;
+            case "Квк":
+                new BuilderFunction("Квк=(,Чу,:,Чс,)×100 ", this.score, listInf.get(4), vBox);
+                break;
+            case "all":
+                new BuilderFunction(",Введите уровнение пример ((1 + 2)*5  - 15 * 8)*7 + 12*(34 - 4)/(7 + 8)", this.score, listInf.get(5), vBox);
+                break;
+            case "ргппк":
+                new BuilderFunction("S=,Sз,*,i,*,Kк,/,Kг,*1", this.score, listInf.get(6), vBox);
+                break;
+            case "пск":
+                new BuilderFunction("ПСК=,СК,+,СВК,+,%", this.score, listInf.get(7), vBox);
+                break;
+            case "ркап":
+                new BuilderFunction("Реп=,СЗ,*(,П,+(,П,/(1+,П,)*,СК,-1))", this.score, listInf.get(8), vBox);
+                break;
+
+        }
 
     }
 
+    private void listInfLoad() {
+
+        listInf.add("Коэффициент текучести кадров дает общее представление о количестве увольнений за определенный период\n" +
+                "Кт = (Чусж + Чуиа) : Чс × 100 Где:\n" +
+                "Кт – коэффициент текучести (в процентах);\n" +
+                "Чусж – число сотрудников, уволившихся по собственному желанию за определенный период;\n" +
+                "Чуиа – число сотрудников, уволенных по инициативе администрации за определенный период;\n" +
+                "Чс – среднесписочное число сотрудников (рассчитывается как среднее арифметическое " +
+                "численности персонала на начало и на конец отчетного периода) пример\n" +
+                "В организации «Альфа» работают 2000 сотрудников. В 2012 году по собственному желанию уволились 116 " +
+                "сотрудников и 20 были уволены по инициативе администрации.\n" +
+                "В течение года были приняты на работу 60 новых сотрудников. Чс = (2000 + (2000 – 116 – 20 + 60)) : 2 =" +
+                "1962 чел. Кт = ((116 + 20) : 1962) × 100 = 6,9%");
+
+        listInf.add("Коэффициент стабильности кадров показывает долю сотрудников, проработавших в организации как минимум год," +
+                "дает возможность оценить степень сохранения организацией квалифицированного персонала\n" +
+                "Кст = (Чр : Чоб) × 100 Где: \n" +
+                "Кст – коэффициент стабильности персонала (в процентах); \n" +
+                "Чр – число сотрудников, работающих в организации с начала отчетного периода; \n" +
+                "Чоб – общая численность сотрудников на начало отчетного периода\n" +
+                "В организации «Альфа» работают 2000 сотрудников. В 2012 году по собственному желанию уволились 116 сотрудников и " +
+                "20 были уволены по инициативе администрации.\n" +
+                "Кст = (2000 – 116 – 20) : 2000 × 100 = 94%");
+
+        listInf.add("Коэффициент динамики числа занятых сотрудников позволяет увидеть динамику" +
+                "численного состава персонала за определенный период, оценить процесс заполнения вакансий с учетом " +
+                "количества увольнений за расчетный период" +
+                "\nКд = (Чп – Чу):Чобщ × 100 Где:\n" +
+                "Кд – коэффициент динамики числа занятых (в процентах);\n" +
+                "Чп – число принятых на работу сотрудников;\n" +
+                "Чу – число уволенных из организации сотрудников;\n" +
+                "Чобщ – число сотрудников организации на начало расчетного периода\n" +
+                "В организации «Альфа» работают 2000 сотрудников. В 2012 году уволились 136 сотрудников и 168 приняты на работу.\n" +
+                "Чс = (2000 + (2000 – 136 + 168)) : 2 = 2016 чел. Кд = ((168 – 136) : 2016) × 100 = 2%");
+
+        listInf.add("Коэффициент приема кадров позволяет оценить объем работ по приему персонала в организации\n" +
+                "Кпк = (Чп : Чс) × 100 Где:\n" +
+                "Кпк – коэффициент приема кадров (в процентах);\n" +
+                "Чп – число принятых на работу сотрудников за определенный период;\n" +
+                "Чс – среднесписочное число сотрудников (рассчитывается как среднее арифметическое численности персонала на начало и на конец отчетного периода)\n" +
+                "В организации «Альфа» работают 2000 сотрудников. В 2012 году уволились 136 сотрудников и 168 приняты на работу.\n" +
+                "Чс = (2000 + (2000 – 136 + 168)) : 2 = 2016 чел. Кпк = (168 : 2016) × 100 = 9% ");
+
+        listInf.add("Коэффициент выбытия кадров позволяет оценить количество увольнений в процентном отношении к " +
+                "среднесписочной численности сотрудников\n" +
+                "Квк = (Чу : Чс) × 100 Где: \n" +
+                "Квк – коэффициент выбытия кадров (в процентах); \n" +
+                "Чу – число уволенных сотрудников за определенный период; \n" +
+                "Чс – среднесписочное число сотрудников (рассчитывается как среднее арифметическое численности персонала на начало и на конец отчетного периода)");
+
+        listInf.add("S = Sз * i * Kк / Kг \n" +
+                "S - в целом все проценты, которые мы вычисляем;\n" +
+                "Sз - размер кредита, исключая первый взнос, если таковой имеется;\n" +
+                "i - годовая ставка в процентах, например 15% годовых;\n" +
+                "Kк - число дней, которые вы будете платить кредит;\n" +
+                "Kг - число дней в этом году.");
+        listInf.add("Полная стоимость кредита — это и есть та самая величина, отражающая все затраты заемщика, которые он понесет в процессе уплаты основного долга по кредиту. Раньше эту информацию банк старался умалчивать, дабы клиент не передумал оформлять кредит. Однако, согласно закону от 2014 года, банк обязуется указывать эту сумму на первой странице кредитного договора и на обязательном графике платежей. Причем размер этой записи должен быть максимально большим, дабы избежать дальнейших недоразумений.\n" +
+                "Рассчитать этот показатель можно по простой формуле:\n" +
+                "ПСК=СК+СВК+%, где:\n" +
+                "СК — сумма кредита;\n" +
+                "СВК — сумма всех комиссий (разовых и ежемесячных);\n" +
+                "% — проценты по кредиту.");
+        listInf.add("Аннуитетные платежи отличаются тем, что клиент выплачивает задолженность равными долями.\n" +
+                "Размер ежемесячного платежа = СЗ*(П+(П/(1+П)*СК-1)), где\n" +
+                "СЗ — сумма займа;\n" +
+                "П — ставка процента за один месяц;\n" +
+                "СК — срок кредитования.");
+    }
+
+
     private void rkap() {
         TextArea inf = textAreaBuild("Аннуитетные платежи отличаются тем, что клиент выплачивает задолженность равными долями.\n" +
-                "Размер ежемесячного платежа = СЗ*(П+(П/(1+П)*СК-1)), где\n" +
-                "\n" +
+                " Реп= СЗ*(П+(П/(1+П)*СК-1)), где\n" +
+                "Реп—Размер ежемесячного платежа\n" +
                 "СЗ — сумма займа;\n" +
-                "\n" +
                 "П — ставка процента за один месяц;\n" +
-                "\n" +
                 "СК — срок кредитования.");
         out = textBuild("= ");
         HBox hBox = new HBox(10);
@@ -117,11 +225,11 @@ public class Functions {
                 cvk = textFieldBuild("", "CDR"),
                 pr = textFieldBuild("", "%");
         score.setOnMouseClicked(event -> {
-            double dck = expression(ck);
+          /*  double dck = expression(ck);
             double dcvk = expression(cvk);
             double dpr = expression(pr);
 
-            out.setText("= " + (dck + dcvk + dpr));
+            out.setText("= " + (dck + dcvk + dpr));*/
         });
         hBox.getChildren().addAll(t1, ck, t2, cvk, t3, pr, out);
         vBox.getChildren().addAll(hBox, inf);
@@ -418,147 +526,4 @@ public class Functions {
         });
     }
 
-}
-
-class RegularExpressions {
-    public static double expression(TextField TFstr) {
-        String str = TFstr.getText();
-        //Удаляем внешние пробелы. Из-за рекурсии удаляются все пробелы, кроме таких "5 5+7"
-        str = str.trim();
-        // кривой способ удаления всех внешних скобок
-        while ((str = removeOuterBrackets(str)) != removeOuterBrackets(str)) ;
-        //конец рекурсии, если блок содержит только число
-        if (isNumber(str)) {
-            return Double.parseDouble(str);
-        }
-
-
-        //вызываем метод, который делит строку на два блока, делает  вызов expression() внутри и так пока не наткнемся на блок, состоящий только из числа
-        return splicing(str);
-    }
-
-    public static double expression(String str) {
-        //Удаляем внешние пробелы. Из-за рекурсии удаляются все пробелы, кроме таких "5 5+7"
-        str = str.trim();
-        // кривой способ удаления всех внешних скобок
-        while ((str = removeOuterBrackets(str)) != removeOuterBrackets(str)) ;
-        //конец рекурсии, если блок содержит только число
-        if (isNumber(str)) {
-            return Double.parseDouble(str);
-        }
-
-
-        //вызываем метод, который делит строку на два блока, делает  вызов expression() внутри и так пока не наткнемся на блок, состоящий только из числа
-        return splicing(str);
-    }
-
-    public static double splicing(String str) {
-        //ищем точку для разделения строки на два блока
-        int splice = findSplice(str);
-        String block1, block2;
-        block1 = str.substring(0, splice);
-        block2 = str.substring(splice + 1);
-
-        //тут происходит вызов expression() и так будет происходить, пока мы не получим только число в блоке
-        //потом блоки будут склеиваться снизу вверх
-        switch (str.charAt(splice)) {
-            case '+':
-                return expression(block1) + expression(block2);
-            case '-':
-                return expression(block1) - expression(block2);
-            case '*':
-                return expression(block1) * expression(block2);
-            case '/':
-                return expression(block1) / expression(block2);
-        }
-        return 0; //никогда сюда не попадем
-    }
-
-    private static String removeOuterBrackets(String str) {
-        if (str.startsWith("(") && str.endsWith(")")) {
-            int count = 0;
-            for (int i = 1; i < str.length() - 1; i++) {
-                switch (str.charAt(i)) {
-                    case '(':
-                        count++;
-                        break;
-                    case ')':
-                        count--;
-                        break;
-                }
-                if (count < 0) {
-                    return str; //возвращаем исходную строку, т.к. нечго удалять
-                }
-            }
-            if (count != 0) {
-
-                throw new IllegalArgumentException("Brakets! (()");
-            }
-            return str.substring(1, str.length() - 1); //возвращаем строку без одних внешних скобок
-        }
-        return str; //никогда сюда не попадем
-    }
-
-    public static boolean isNumber(String str) {
-        try {
-            Double.parseDouble(str);
-        } catch (NumberFormatException e) {
-            return false;
-        }
-        return true;
-    }
-
-    //приоритет при поиске разделителя у + -, потом * /
-    // (5+6)*7+8  -> (5+6)*7 [+] 8
-    // если не можем найти + или - для разделения строки, ищем * /
-    // если не находим, то кидается ошибка, т.к. сюда строка только с числом не может попасть
-    public static int findSplice(String str) {
-        int count = 0;
-        for (int i = 0; i < str.length(); i++) {
-            count = getCount(str, count, i);
-            if (count == 0 &&
-                    (str.charAt(i) == '+' || str.charAt(i) == '-')) {
-                return i;
-            }
-        }
-        count = 0;
-        for (int i = 0; i < str.length(); i++) {
-            count = getCount(str, count, i);
-            if (count == 0 &&
-                    (str.charAt(i) == '*' || str.charAt(i) == '/')) {
-                //TODO вызов метода для конвертации строки 1/7/5*2 -> 1*2/(7*5)
-                //а лучше вообще переписать findSplice и removeOuterBrackets, много повторяющегося кода
-                return i;
-            }
-        }
-        if (count != 0) {
-
-            throw new IllegalArgumentException("Brakets! (()");
-        } else if (count == 0) {
-
-            throw new IllegalArgumentException("symbols||spaces between numbers||double operators|| *) /) (+ etc");
-        }
-        return 0; //никогда сюда не попадем
-    }
-
-    private static int getCount(String str, int count, int i) {
-        switch (str.charAt(i)) {
-            case '(':
-                count++;
-                break;
-            case ')':
-                count--;
-                break;
-        }
-        if (count < 0) {
-
-            throw new IllegalArgumentException("Brackets! )(");
-        }
-        return count;
-    }
-
-    public static int convert(String str) {
-        //TODO конвертация строки 1/7/5*2 -> 1*2/(7*5)
-        return 0;
-    }
 }

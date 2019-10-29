@@ -2,7 +2,7 @@ package ru.bkmz.kurs;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import ru.bkmz.kurs.util.StageStandart;
+import ru.bkmz.kurs.util.Stage.StageStandart;
 
 public class Main extends Application {
 
@@ -12,6 +12,12 @@ public class Main extends Application {
     public static void main(String[] args) {
 
         launch(args);
+    }
+
+    @Override
+    public void init() throws Exception {
+
+
     }
 
     @Override

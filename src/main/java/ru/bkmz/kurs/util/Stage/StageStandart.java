@@ -1,4 +1,4 @@
-package ru.bkmz.kurs.util;
+package ru.bkmz.kurs.util.Stage;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;

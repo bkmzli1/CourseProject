@@ -1,4 +1,4 @@
-package ru.bkmz.kurs.util;
+package ru.bkmz.kurs.util.Stage;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
