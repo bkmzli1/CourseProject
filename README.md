@@ -178,7 +178,7 @@
 <a name="A"><h2>A</h2></a>
 ----------------------
 
-![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_1.png "Коэффицент текучести кадров")
-![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_2.png "Выбор")
-![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_3.png "Решение примеров")
-![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_4.png "Решение примеров")
+![alt-текст](https://github.com/bkmzli1/CourseProject/tree/stableV1.1.3.1/imeg/java_1.png "Коэффицент текучести кадров")
+![alt-текст](https://github.com/bkmzli1/CourseProject/tree/stableV1.1.3.1/imeg/java_2.png "Выбор")
+![alt-текст](https://github.com/bkmzli1/CourseProject/tree/stableV1.1.3.1/imeg/java_3.png "Решение примеров")
+![alt-текст](https://github.com/bkmzli1/CourseProject/tree/stableV1.1.3.1/imeg/java_4.png "Решение примеров")
