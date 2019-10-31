@@ -20,59 +20,87 @@ public class WrappedImageView extends ImageView {
 
         setOnMouseEntered(event -> {
             try {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            try {
+                                on.join();
+                                off.join();
+                            } catch (Exception e) {
+                            }
+                            on = new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    for (double i = 0d; i < 1d; i += 0.2d) {
+                                        double finalI = i;
+                                        try {
+                                            Thread.sleep(time);
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                        Platform.runLater(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                setEffect(new Glow(finalI));
+                                            }
+                                        });
 
-                off.join();
 
+                                    }
+                                }
+                            });
+
+
+                            on.start();
+                        } catch (Exception e) {
+                        }
+                    }
+                }).start();
             } catch (Exception e) {
             }
-            on = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    for (double i = 0d; i < 1d; i += 0.2d) {
-                        double finalI = i;
-                        try {
-                            Thread.sleep(time);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        Platform.runLater(new Runnable() {
-                            @Override
-                            public void run() {
-                                setEffect(new Glow(finalI));
-                            }
-                        });
-                    }
-                }
-            });
-            on.start();
         });
         setOnMouseExited(event -> {
             try {
-                on.join();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            try {
+                                on.join();
+                                off.join();
+                            } catch (Exception e) {
+                            }
+                            off = new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    for (double i = 1d; i > 0d; i -= 0.2d) {
+                                        try {
+                                            Thread.sleep(time);
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                        double finalI = i;
 
+                                        Platform.runLater(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                setEffect(new Glow(finalI));
+                                            }
+                                        });
+
+                                    }
+                                }
+                            });
+
+
+                            off.start();
+                        } catch (Exception e) {
+                        }
+                    }
+                }).start();
             } catch (Exception e) {
             }
-            off = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    for (double i = 1d; i > 0d; i -= 0.2d) {
-                        try {
-                            Thread.sleep(time);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        double finalI = i;
-                        Platform.runLater(new Runnable() {
-                            @Override
-                            public void run() {
-                                setEffect(new Glow(finalI));
-                            }
-                        });
-
-                    }
-                }
-            });
-            off.start();
         });
         setOnMouseClicked(event -> {
             openWebpage(url);

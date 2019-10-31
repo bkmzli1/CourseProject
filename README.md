@@ -181,3 +181,4 @@
 ![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_1.png "Коэффицент текучести кадров")
 ![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_2.png "Выбор")
 ![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_3.png "Решение примеров")
+![alt-текст](https://github.com/bkmzli1/CourseProject/blob/master/imeg/java_4.png "Решение примеров")
