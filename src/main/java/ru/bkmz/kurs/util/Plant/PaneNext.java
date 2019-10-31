@@ -1,4 +1,4 @@
-package ru.bkmz.kurs.util;
+package ru.bkmz.kurs.util.Plant;
 
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -35,12 +35,3 @@ public class PaneNext {
 
 }
 
-class Notification {
-     Notification(String name, String info) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(name);
-        alert.setHeaderText(null);
-        alert.setContentText(info);
-        alert.showAndWait();
-    }
-}

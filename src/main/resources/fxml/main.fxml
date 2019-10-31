@@ -10,15 +10,16 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="345.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.bkmz.kurs.controller.MainController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="270.0" prefWidth="498.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.bkmz.kurs.controller.MainController">
     <children>
-        <VBox prefHeight="361.0" prefWidth="234.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
             <MenuBar>
               <menus>
                 <Menu mnemonicParsing="false" text="File">
-                  <items>
+                    <items>
                     <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+                        <MenuItem mnemonicParsing="false" onAction="#size" text="size" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
@@ -27,21 +28,23 @@
                   </items>
                 </Menu>
               </menus>
+               <VBox.margin>
+                  <Insets left="-10.0" right="-10.0" />
+               </VBox.margin>
             </MenuBar>
                 <ComboBox fx:id="functionSheet" cache="true" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
-                <VBox fx:id="vBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" />
-                <HBox spacing="5.0">
-                    <children>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#size" opacity="0.0" text="Button" HBox.hgrow="ALWAYS" />
-                  <Button fx:id="score" mnemonicParsing="false" text="Произвести расчёт" />
-                    </children>
+                <VBox fx:id="vBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="ALWAYS">
                <VBox.margin>
-                  <Insets bottom="-10.0" />
-               </VBox.margin>
+                  <Insets />
+               </VBox.margin></VBox>
+                <HBox fx:id="HBoxButtons" maxWidth="1.7976931348623157E308" spacing="5.0">
+                    <children>
+                  <Button fx:id="score" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Произвести расчёт" HBox.hgrow="ALWAYS" />
+                    </children>
                 </HBox>
             </children>
          <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            <Insets bottom="10.0" left="10.0" right="10.0" />
          </padding>
         </VBox>
     </children>

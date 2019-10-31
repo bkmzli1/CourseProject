@@ -6,32 +6,50 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import ru.bkmz.kurs.util.Functions;
-import ru.bkmz.kurs.util.Planet;
-import ru.bkmz.kurs.util.PlanetDAO;
-import ru.bkmz.kurs.util.StageDialog;
+import ru.bkmz.kurs.Main;
+import ru.bkmz.kurs.util.Plant.Planet;
+import ru.bkmz.kurs.util.Plant.PlanetDAO;
+import ru.bkmz.kurs.util.Stage.StageDialog;
+import ru.bkmz.kurs.util.logik.seniority.Seniority;
+import ru.bkmz.kurs.util.logik.vacation.Vacation;
+import ru.bkmz.kurs.util.logik.vacation.VacationN;
 
 
 public class MainController {
     public ComboBox<Planet> functionSheet;
     public Button score;
     public VBox vBox;
-   static StageDialog stageDialog;
+    static StageDialog stageDialog;
+    public HBox HBoxButtons;
 
     public void initialize() {
 
         ChangeListener<Planet> changeListener = new ChangeListener<Planet>() {
             @Override
             public void changed(ObservableValue<? extends Planet> observable, Planet oldValue, Planet newValue) {
-                new Functions(observable, vBox, score);
-
+                vBox.getChildren().clear();
+                HBoxButtons.getChildren().clear();
+                HBoxButtons.getChildren().add(score);
+                switch (newValue.getCode()) {
+                    case "тс":
+                        new Seniority(vBox, HBoxButtons, score);
+                        break;
+                    case "рсp":
+                        new Vacation(vBox, HBoxButtons, score);
+                        break;
+                    case "рсnp":
+                        new VacationN(vBox, HBoxButtons, score);
+                        break;
+                }
             }
         };
 
         ObservableList<Planet> planetObservableList = comboBoxLoader();
 
         functionSheet.setItems(planetObservableList);
+
 
         functionSheet.getSelectionModel().selectedItemProperty().addListener(changeListener);
         functionSheet.setValue(planetObservableList.get(0));
@@ -41,17 +59,9 @@ public class MainController {
 
 
     public ObservableList<Planet> comboBoxLoader() {
-        PlanetDAO.load("Кт", "Коэффициент текучести кадров");
-        PlanetDAO.load("Кст", "Коэффициент стабильности кадров");
-        PlanetDAO.load("Кд", "Коэффициент динамики числа занятых сотрудников");
-        PlanetDAO.load("Кпк", "Коэффициент приема кадров");
-        PlanetDAO.load("Квк", "Коэффициент выбытия кадров");
-        PlanetDAO.load("ргппк", "Расчета годового процента по кредиту");
-        PlanetDAO.load("пск", "Полная стоимость кредита");
-        PlanetDAO.load("ркап", "Расчета кредита аннуитетными платежами");
-
-
-        PlanetDAO.load("all", "Решение примеров");
+        PlanetDAO.load("тс", "Расчет трудового стажа");
+        PlanetDAO.load("рсp", "Расчет суммы отпускных (если расчетный периуд отработан полнастью)");
+        PlanetDAO.load("рсnp", "Расчет суммы отпускных (если расчетный периуд отработан не полнастью)");
 
 
         ObservableList<Planet> list = PlanetDAO.getPlanetList();
@@ -60,6 +70,8 @@ public class MainController {
 
 
     public void size(ActionEvent actionEvent) {
+        System.out.println("w:" + Main.stage.getWidth());
+        System.out.println("h:" + Main.stage.getHeight());
 
     }
 

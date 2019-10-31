@@ -1,9 +1,12 @@
+
 .text {
     -fx-font-size: 15;
-    fx-font-family: "Arial Black";
+    -fx-font-family: "Arial Black";
+
     -fx-fill: #818181;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
     -fx-font-weight: 900;
+
 }
 
 .button {
@@ -16,15 +19,17 @@
 
 #text {
     -fx-font-size: 17;
-    fx-font-family: "Arial Black";
+    -fx-font-family: "Arial Black";
     -fx-fill: #818181;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
     -fx-font-weight: 900;
+
+
 }
 
 .text-field {
     -fx-font-size: 15;
-    fx-font-family: "Arial Black";
+    -fx-font-family: "Arial Black";
     -fx-fill: #818181;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
     -fx-font-weight: 900;
@@ -32,7 +37,7 @@
 
 .text-area {
     -fx-font-size: 15;
-    fx-font-family: "Arial Black";
+    -fx-font-family: "Arial Black";
     -fx-fill: #818181;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
     -fx-font-weight: 900;
@@ -40,21 +45,36 @@
 
 .menu {
     -fx-font-size: 15;
-    fx-font-family: "Arial Black";
+    -fx-font-family: "Arial Black";
     -fx-effect: innershadow(three-pass-box, rgba(255, 255, 255, 0.7), 6, 0.0, 0, 2);
 }
 
 .menu-bar {
     -fx-font-size: 15;
-    fx-font-family: "Arial Black";
+    -fx-font-family: "Arial Black";
     -fx-fill: #000a81;
     -fx-effect: innershadow(three-pass-box, rgba(0, 10, 129, 0.7), 6, 0.0, 0, 2);
 }
 
-.label {
-    -fx-font-size: 15;
-    fx-font-family: "Arial Black";
+#text {
+    -fx-font-size: 20;
+    -fx-font-family: "Arial Black";
     -fx-fill: #818181;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
     -fx-font-weight: 900;
 }
+.label {
+    -fx-font-size: 15;
+    -fx-font-family: "Arial Black";
+    -fx-fill: #818181;
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+    -fx-font-weight: 900;
+}
+.cell {
+
+
+}
+
+
+
+

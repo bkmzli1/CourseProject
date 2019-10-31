@@ -1,20 +1,23 @@
-package ru.bkmz.kurs.util;
+package ru.bkmz.kurs.util.Stage;
 
-import javafx.fxml.FXMLLoader;
+import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import ru.bkmz.kurs.Main;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Objects;
+
+import static ru.bkmz.kurs.util.Stage.StageStandart.loader2;
 
 public class StageDialog {
     Stage newWindow = new Stage();
+
     public StageDialog() {
         StackPane secondaryLayout = new StackPane();
 
@@ -26,15 +29,14 @@ public class StageDialog {
 
         // Specifies the owner Window (parent) for new window
         newWindow.initOwner(Main.stageStandart.getStage());
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/info.fxml")));
+
         // Set position of second window, related to primary window.
         try {
-            loader.load();
+            loader2.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Parent root = loader.getRoot();
+        Parent root = loader2.getRoot();
         InputStream inputStream = ClassLoader.class.getResourceAsStream("/image/fon icon.png");
         try {
             Image image = new Image(inputStream);
@@ -43,13 +45,17 @@ public class StageDialog {
             System.out.println("icon null");
         }
 
-        Scene scene =new Scene(root);
-        scene.getStylesheets().add(getClass().getClassLoader().getResource("css\\main.css").toExternalForm());
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getClassLoader().getResource("css/inf.css").toExternalForm());
         newWindow.setScene(scene);
-        newWindow.setWidth(598);
-        newWindow.setHeight(317);
+        newWindow.setWidth(590);
+        newWindow.setHeight(590 - 10);
         newWindow.setResizable(false);
+        newWindow.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            public void handle(WindowEvent we) {
 
+            }
+        });
         newWindow.show();
 
 

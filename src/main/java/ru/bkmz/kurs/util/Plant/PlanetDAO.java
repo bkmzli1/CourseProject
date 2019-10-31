@@ -1,4 +1,4 @@
-package ru.bkmz.kurs.util;
+package ru.bkmz.kurs.util.Plant;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

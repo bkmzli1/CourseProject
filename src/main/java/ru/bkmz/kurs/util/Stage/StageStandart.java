@@ -1,4 +1,4 @@
-package ru.bkmz.kurs.util;
+package ru.bkmz.kurs.util.Stage;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -16,9 +16,10 @@ import java.util.Objects;
 public class StageStandart extends Stage {
     boolean follScren;
     Stage stage;
+    public static FXMLLoader loader2 = new FXMLLoader();
 
     public StageStandart(String name, boolean follScren, Stage stage, String nameStage) {
-
+        loader2.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/" + "info" + ".fxml")));
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/" + name + ".fxml")));
         try {
@@ -26,7 +27,7 @@ public class StageStandart extends Stage {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        stage = new Stage();
+
 
         stage.setMaximized(follScren);
 
@@ -55,10 +56,10 @@ public class StageStandart extends Stage {
         } catch (Exception e) {
         }
         stage.show();
-
+        this.stage = stage;
         //this.follScren = stage.isMaximized();
         //stage.setResizable(false);
-        this.stage = stage;
+
 
     }
 
