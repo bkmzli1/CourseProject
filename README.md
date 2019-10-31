@@ -179,6 +179,6 @@
 ----------------------
 
 ![alt-текст](https://github.com/bkmzli1/CourseProject/blob/stableV1.1.3.1/imeg/1.png )
-![alt-текст](https://github.com/bkmzli1/CourseProject/tree/stableV1.1.3.1/imeg/2.png )
-![alt-текст](https://github.com/bkmzli1/CourseProject/tree/stableV1.1.3.1/imeg/3.png )
-![alt-текст](https://github.com/bkmzli1/CourseProject/tree/stableV1.1.3.1/imeg/4.png )
+![alt-текст](https://github.com/bkmzli1/CourseProject/blob/stableV1.1.3.1/imeg/2.png )
+![alt-текст](https://github.com/bkmzli1/CourseProject/blob/stableV1.1.3.1/imeg/3.png )
+![alt-текст](https://github.com/bkmzli1/CourseProject/blob/stableV1.1.3.1/imeg/4.png )
