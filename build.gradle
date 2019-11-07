@@ -5,9 +5,9 @@ plugins {
 
 launch4j {
     mainClassName = 'ru.bkmz.kurs.Main'
-    outfile = "kurs 1.1.1.1V.exe"
-    version = "1.1.1.1"
-    textVersion = "1.1.1.1"
+    outfile = "kurs 1.1.3.1V.exe"
+    version = "1.1.3.1"
+    textVersion = "1.1.3.1"
     companyName = "BkzmLitel"
     copyright = "BkzmLitel"
     launch4j.language = 'RUSSIAN'
@@ -18,7 +18,7 @@ launch4j {
 
 apply plugin: "edu.sc.seis.launch4j"
 group 'kurs'
-version '1.1.1.1'
+version '1.1.3.1'
 compileJava.options.encoding = "UTF-8"
 sourceCompatibility = 1.8
 

@@ -23,7 +23,7 @@ public class PaneNext {
 
                     Stage stage = Main.stageStandart.getStage();
 
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(name)));
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/" + name + ".fxml")));
 
                     stage.setScene(new Scene(root));
                 } catch (Exception e) {
