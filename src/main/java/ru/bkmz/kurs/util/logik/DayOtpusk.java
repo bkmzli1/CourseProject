@@ -29,7 +29,7 @@ public class DayOtpusk {
         score.setOnMouseClicked(event -> {
             try {
                 double dMes = Double.parseDouble(mes.getText());
-                out.setText("= " + df.format((28 / 12 * dMes)));
+                out.setText("= " + df.format((28f / 12f * dMes)));
             } catch (Exception e) {
                 new Notification("уведомление", "Заполните все поля");
             }

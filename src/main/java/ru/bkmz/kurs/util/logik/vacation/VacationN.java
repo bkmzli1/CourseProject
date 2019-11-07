@@ -65,7 +65,7 @@ public class VacationN {
                         kkdnvgov2D = Double.parseDouble(kkdnvgov2.getText());
 
 
-                out.setText("=" + df.format((snrpD / kkdD * kkdoD - 24.4 * kpomrpD + (29.4 / kkdnm1D * kkdnvgov1D + 29.4 / kkdnm2D * kkdnvgov2D))));
+                out.setText("=" + df.format((snrpD / kkdD * kkdoD - 24.4f * kpomrpD + (29.4f / kkdnm1D * kkdnvgov1D + 29.4f / kkdnm2D * kkdnvgov2D))));
             } catch (Exception e) {
                 new Notification("уведомление", "Заполните все поля");
             }
