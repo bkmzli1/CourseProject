@@ -1,7 +1,6 @@
 package ru.bkmz.kurs.util.logik;
 
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -15,7 +14,6 @@ import static ru.bkmz.kurs.util.bulderElements.BuilderElements.*;
 public class DayOtpusk {
     public DayOtpusk(VBox vBox, HBox HBoxButtons, Button score) {
 
-        TextArea inf = textAreaBuild("Ком - количество отработаных месяцев");
 
         Text t0 = textBuild("количество дней отпуска = 28д / 12мес. *");
 
@@ -23,7 +21,7 @@ public class DayOtpusk {
         Text out = textBuild("= ?");
         HBox hBox = hBoxBulder();
         hBox.getChildren().addAll(t0, mes, out);
-        vBox.getChildren().addAll(hBox, inf);
+        vBox.getChildren().addAll(hBox);
 
         DecimalFormat df = new DecimalFormat("0.###");
         score.setOnMouseClicked(event -> {
@@ -35,5 +33,6 @@ public class DayOtpusk {
             }
 
         });
+        infBilder(vBox, "Ком - количество отработаных месяцев");
     }
 }

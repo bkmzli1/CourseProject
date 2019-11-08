@@ -17,9 +17,6 @@ import static ru.bkmz.kurs.util.bulderElements.BuilderElements.*;
 public class Vacation {
 
     public Vacation(VBox vBox, HBox hBoxButtons, Button score) {
-        TextArea inf = textAreaBuild("" +
-                "Снрп - Сумма начислений за расчётный период\n" +
-                "Ккд - количество колендарных дней отпусков");
 
         VBox vBoxCDZ = vBoxBulder();
         HBox hBox = hBoxBulder();
@@ -30,7 +27,7 @@ public class Vacation {
         Text out = textBuild("= ?");
         hBox.getChildren().addAll(t0,snrp, t1, kkd, out);
         vBoxCDZ.getChildren().addAll(hBox);
-        vBox.getChildren().addAll(vBoxCDZ, inf);
+        vBox.getChildren().addAll(vBoxCDZ);
         HBox.setHgrow(snrp, Priority.ALWAYS);
         VBox.setVgrow(hBox, Priority.ALWAYS);
 
@@ -45,5 +42,8 @@ public class Vacation {
             }
 
         });
+        infBilder(vBox, "" +
+                "Снрп - Сумма начислений за расчётный период\n" +
+                "Ккд - количество колендарных дней отпусков");
     }
 }

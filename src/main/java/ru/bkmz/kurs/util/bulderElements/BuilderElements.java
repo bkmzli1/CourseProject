@@ -48,8 +48,8 @@ public class BuilderElements {
         textField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (!newValue.matches("[\\d*,.()*/+-:]")) {
-                    textField.setText(newValue.replaceAll("[^\\d,.*/+()-:]", ""));
+                if (!newValue.matches("[\\d,.-]")) {
+                    textField.setText(newValue.replaceAll("[^\\d,.-]", ""));
                 }
             }
         });
@@ -72,5 +72,9 @@ public class BuilderElements {
         HBox.setHgrow(hBox, Priority.ALWAYS);
         VBox.setVgrow(hBox, Priority.ALWAYS);
         return hBox;
+    }
+    public static  void infBilder(VBox vBox, String infs){
+        TextArea inf = textAreaBuild(infs);
+        vBox.getChildren().add(inf);
     }
 }

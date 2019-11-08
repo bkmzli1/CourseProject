@@ -13,7 +13,7 @@ import static ru.bkmz.kurs.util.bulderElements.BuilderElements.*;
 
 public class SickLeave {
     public SickLeave(VBox vBox, HBox HBoxButtons, Button score) {
-        TextArea inf = textAreaBuild("");
+
 
         Text text2 = textBuild("свбл=");
         TextField sdz = textFieldBuild("", "СДЗ");
@@ -25,7 +25,7 @@ public class SickLeave {
         HBox hBox = hBoxBulder();
         VBox.setVgrow(hBox, Priority.ALWAYS);
         hBox.getChildren().addAll(text2, sdz, text3, proc, text4, kdb, out);
-        vBox.getChildren().addAll(hBox,inf);
+        vBox.getChildren().addAll(hBox);
         score.setOnMouseClicked(event -> {
             try{
             double
@@ -37,5 +37,6 @@ public class SickLeave {
                 new Notification("уведомление", "Заполните все поля");
             }
         });
+        infBilder(vBox, "123");
     }
 }

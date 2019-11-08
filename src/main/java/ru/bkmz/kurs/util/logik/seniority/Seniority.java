@@ -12,8 +12,7 @@ import ru.bkmz.kurs.util.Plant.Notification;
 
 import java.util.ArrayList;
 
-import static ru.bkmz.kurs.util.bulderElements.BuilderElements.ButtonBuild;
-import static ru.bkmz.kurs.util.bulderElements.BuilderElements.vBoxBulder;
+import static ru.bkmz.kurs.util.bulderElements.BuilderElements.*;
 
 
 public class Seniority {
@@ -115,7 +114,7 @@ public class Seniority {
         hBoxButtons.getChildren().add(0, vBox);
         hBoxButtons.getChildren().add(0, checkBox);
         hBoxButtons.getChildren().add(0, label);
-
+        //infBilder(rootVBox, "Ком - количество отработаных месяцев");
     }
 
 

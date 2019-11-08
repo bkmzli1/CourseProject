@@ -17,11 +17,6 @@ import static ru.bkmz.kurs.util.bulderElements.BuilderElements.*;
 public class VacationN {
 
     public VacationN(VBox vBox, HBox hBoxButtons, Button score) {
-        TextArea inf = textAreaBuild("" +
-                "Снрп - Сумма начислений за расчётный период\n" +
-                "Ккд - количество колендарных дней\n" +
-                "Ккдо - количество колендарных дней отпусков\n" +
-                "ккд-Количество календарных дней");
 
         VBox vBoxCDZ = vBoxBulder();
         HBox hBox1 = hBoxBulder();
@@ -49,7 +44,7 @@ public class VacationN {
         hBox1.getChildren().addAll(t0, snrp, t1, kkd, t2, kkdo, t3, kpomrp, t4_2);
         hBox2.getChildren().addAll(t4, kkdnm1, t5, kkdnvgov1, t6, kkdnm2, t7, kkdnvgov2, t8, out);
         vBoxCDZ.getChildren().addAll(hBox1, hBox2);
-        vBox.getChildren().addAll(vBoxCDZ, inf);
+        vBox.getChildren().addAll(vBoxCDZ);
         VBox.setVgrow(hBox1, Priority.ALWAYS);
         DecimalFormat df = new DecimalFormat("0.###");
 
@@ -71,5 +66,10 @@ public class VacationN {
             }
 
         });
+        infBilder(vBox, "" +
+                "Снрп - Сумма начислений за расчётный период\n" +
+                "Ккд - количество колендарных дней\n" +
+                "Ккдо - количество колендарных дней отпусков\n" +
+                "ккд-Количество календарных дней");
     }
 }
