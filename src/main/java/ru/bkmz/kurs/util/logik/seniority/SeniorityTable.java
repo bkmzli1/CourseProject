@@ -14,7 +14,7 @@ public class SeniorityTable {
     private DatePicker dataReception, dateDismissal;
     private Button remove;
 
-    public SeniorityTable(String id, DatePicker datePickerR, DatePicker DatePickerD) {
+    SeniorityTable(String id, DatePicker datePickerR, DatePicker DatePickerD) {
         this.id = new Text(id);
         StringConverter<LocalDate> converter = new StringConverter<LocalDate>() {
             DateTimeFormatter dateFormatter =
@@ -41,10 +41,10 @@ public class SeniorityTable {
         this.dataReception = datePickerR;
         this.dateDismissal = DatePickerD;
         this.dataReception.setMaxWidth(Double.MAX_VALUE);
-        this.dataReception.setPromptText("dd/MM/yyyy");
-        this.dataReception.setConverter(converter);;
+        this.dataReception.setPromptText("дд/мм/гггг".toUpperCase());
+        this.dataReception.setConverter(converter);
         this.dateDismissal.setMaxWidth(Double.MAX_VALUE);
-        this.dateDismissal.setPromptText("dd/MM/yyyy");
+        this.dateDismissal.setPromptText("дд/мм/гггг".toUpperCase());
         this.dateDismissal.setConverter(converter);
     }
 

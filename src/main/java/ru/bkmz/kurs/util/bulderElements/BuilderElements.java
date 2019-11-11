@@ -2,32 +2,39 @@ package ru.bkmz.kurs.util.bulderElements;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 
 import javax.swing.*;
 
 public class BuilderElements {
-    public static TextArea textAreaBuild(String value) {
+    private static TextArea textAreaBuild(String value) {
+        value = value.toUpperCase();
         TextArea textArea = new TextArea(value);
 
         textArea.setMaxHeight(Double.MAX_VALUE);
         textArea.setMaxWidth(Double.MAX_VALUE);
         textArea.setEditable(false);
         textArea.setWrapText(true);
+
         HBox.setHgrow(textArea, Priority.ALWAYS);
         VBox.setVgrow(textArea, Priority.ALWAYS);
         return textArea;
     }
 
     public static TextField textFieldBuild(String value, String promptText) {
+        promptText = promptText.toUpperCase();
         TextField textField = new TextField(value);
         textField.setPromptText(promptText);
+        textField.setAlignment(Pos.CENTER);
         HBox.setHgrow(textField, Priority.ALWAYS);
         VBox.setVgrow(textField, Priority.ALWAYS);
         //textField.setId("text");
@@ -36,11 +43,23 @@ public class BuilderElements {
     }
 
     public static Text textBuild(String value) {
-        Text text = new Text(value);
+        value = value.toUpperCase();
+        Text text = new Text(value.replace("*","×").replace("/","÷"));
+        text.setTextAlignment(TextAlignment.CENTER);
         text.setId("text");
         HBox.setHgrow(text, Priority.ALWAYS);
         VBox.setVgrow(text, Priority.ALWAYS);
         return text;
+    }
+
+    public static Label  labelBuild(String value) {
+        value = value.toUpperCase();
+        Label label = new Label(value.replace("*","×").replace("/","÷").replace("÷÷","/"));
+        label.setTextAlignment(TextAlignment.CENTER);
+        label.setId("text");
+        HBox.setHgrow(label, Priority.ALWAYS);
+        VBox.setVgrow(label, Priority.ALWAYS);
+        return label;
     }
 
 
@@ -55,7 +74,9 @@ public class BuilderElements {
         });
     }
     public  static Button ButtonBuild(String value){
+        value = value.toUpperCase();
         Button button = new Button(value);
+        button.setAlignment(Pos.CENTER);
         button.setMaxWidth(Double.MAX_VALUE);
         HBox.setHgrow(button, Priority.ALWAYS);
         VBox.setVgrow(button, Priority.ALWAYS);
@@ -63,18 +84,22 @@ public class BuilderElements {
     }
     public static HBox hBoxBulder(){
         HBox hBox = new HBox(10);
-        HBox.setHgrow(hBox, Priority.ALWAYS);
-        VBox.setVgrow(hBox, Priority.ALWAYS);
+        hBox.setAlignment(Pos.CENTER);
+        HBox.setHgrow(hBox, Priority.SOMETIMES);
+        VBox.setVgrow(hBox, Priority.SOMETIMES);
         return hBox;
     }
     public static VBox vBoxBulder(){
         VBox hBox = new VBox(10);
-        HBox.setHgrow(hBox, Priority.ALWAYS);
-        VBox.setVgrow(hBox, Priority.ALWAYS);
+        hBox.setAlignment(Pos.CENTER);
+        HBox.setHgrow(hBox, Priority.SOMETIMES);
+        VBox.setVgrow(hBox, Priority.SOMETIMES);
         return hBox;
     }
     public static  void infBilder(VBox vBox, String infs){
         TextArea inf = textAreaBuild(infs);
+        HBox.setHgrow(inf, Priority.ALWAYS);
+        VBox.setVgrow(inf, Priority.ALWAYS);
         vBox.getChildren().add(inf);
     }
 }

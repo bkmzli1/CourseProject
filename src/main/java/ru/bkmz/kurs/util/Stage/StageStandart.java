@@ -8,15 +8,16 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
 
 
 public class StageStandart extends Stage {
-    boolean follScren;
-    Stage stage;
-    public static FXMLLoader loader2 = new FXMLLoader();
+    private boolean follScren;
+    private Stage stage;
+    static FXMLLoader loader2 = new FXMLLoader();
 
     public StageStandart(String name, boolean follScren, Stage stage, String nameStage) {
         loader2.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/" + "info" + ".fxml")));
@@ -38,6 +39,10 @@ public class StageStandart extends Stage {
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getClassLoader().getResource("css/main.css")).toExternalForm());
         stage.setScene(scene);
         stage.setTitle(nameStage);
+        Dimension sSize = Toolkit.getDefaultToolkit ().getScreenSize ();
+
+        stage.setHeight(sSize.height/2f);
+        stage.setWidth(sSize.width/2f);
         InputStream inputStream = ClassLoader.class.getResourceAsStream("/image/fon icon.png");
         try {
             Image image = new Image(inputStream);
@@ -51,10 +56,6 @@ public class StageStandart extends Stage {
                 System.exit(0);
             }
         });
-        try {
-
-        } catch (Exception e) {
-        }
         stage.show();
         this.stage = stage;
         //this.follScren = stage.isMaximized();

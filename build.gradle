@@ -1,27 +1,27 @@
+
 plugins {
     id 'java'
     id 'edu.sc.seis.launch4j' version '2.4.6'
 }
-
+def versions = '1.1.5.4'
 launch4j {
     mainClassName = 'ru.bkmz.kurs.Main'
-    outfile = "kurs 1.1.4.1V.exe"
-    version = "1.1.4.1"
-    textVersion = "1.1.4.1"
+    outfile = "HR calculator "+versions+"V.exe"
+    version = versions
+    textVersion = versions
     companyName = "BkzmLitel"
     copyright = "BkzmLitel"
     launch4j.language = 'RUSSIAN'
     launch4j.icon = "B:\\fon1 (1).ico"
     //launch4j.jreMinVersion = "1.8.0_221"
-    internalName = "notebook"
+    internalName = "HR calculator"
 }
 
 apply plugin: "edu.sc.seis.launch4j"
 group 'HR calculator'
-version '1.1.4.1'
+version versions
 sourceCompatibility = 1.8
 compileJava.options.encoding = "UTF-8"
-
 repositories {
     mavenCentral()
 }
@@ -39,6 +39,5 @@ jar {
                 'Class-Path': configurations.runtime.files.collect { "lib/$it.name" }.join(' '),
                 'Main-Class': 'ru.bkmz.kurs.Main'
         )
-
     }
 }

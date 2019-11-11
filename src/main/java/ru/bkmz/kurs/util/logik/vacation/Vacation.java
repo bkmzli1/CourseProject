@@ -20,7 +20,7 @@ public class Vacation {
 
         VBox vBoxCDZ = vBoxBulder();
         HBox hBox = hBoxBulder();
-        Text t0 = textBuild("сумма отпускных =");
+        Text t0 = textBuild("Сумма отпускных =");
         TextField snrp = textFieldBuild("", "Снрп");
         Text t1 = textBuild("/ 12мес. / 29,4дн. *");
         TextField kkd = textFieldBuild("", "Ккд");
@@ -36,7 +36,7 @@ public class Vacation {
             try {
                 double dSnrp = Double.parseDouble(snrp.getText().replace(",","."));
                 double dKkd = Double.parseDouble(kkd.getText().replace(",","."));
-                out.setText("=" + df.format((dSnrp / 12f / 29.4f * dKkd)));
+                out.setText("= " + df.format((dSnrp / 12f / 29.4f * dKkd)));
             }catch (Exception e){
                 new Notification("уведомление", "Заполните все поля");
             }

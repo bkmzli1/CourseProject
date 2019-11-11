@@ -15,7 +15,7 @@ public class DayOtpusk {
     public DayOtpusk(VBox vBox, HBox HBoxButtons, Button score) {
 
 
-        Text t0 = textBuild("количество дней отпуска = 28д / 12мес. *");
+        Text t0 = textBuild("Количество дней отпуска = 28д / 12мес. *");
 
         TextField mes = textFieldBuild("", "Ком");
         Text out = textBuild("= ?");

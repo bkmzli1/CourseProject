@@ -21,7 +21,7 @@ public class VacationN {
         VBox vBoxCDZ = vBoxBulder();
         HBox hBox1 = hBoxBulder();
         HBox hBox2 = hBoxBulder();
-        Text t0 = textBuild("сумма отпускных =");
+        Text t0 = textBuild("Сумма отпускных =");
         TextField snrp = textFieldBuild("", "Снрп");
         Text t1 = textBuild("/");
         TextField kkd = textFieldBuild("", "Ккд");
@@ -32,13 +32,13 @@ public class VacationN {
         Text t4_2 = textBuild("+");
         Text t4 = textBuild("+ ( 29,4 /");
 
-        TextField kkdnm1 = textFieldBuild("", "ккднм");
+        TextField kkdnm1 = textFieldBuild("", "Ккднм");
         Text t5 = textBuild("*");
-        TextField kkdnvgov1 = textFieldBuild("", "ккднмпов");
+        TextField kkdnvgov1 = textFieldBuild("", "Ккднмпов");
         Text t6 = textBuild("+ 29,4 /");
-        TextField kkdnm2 = textFieldBuild("", "ккднм");
+        TextField kkdnm2 = textFieldBuild("", "Ккднм");
         Text t7 = textBuild("*");
-        TextField kkdnvgov2 = textFieldBuild("", "ккднмпов");
+        TextField kkdnvgov2 = textFieldBuild("", "Ккднмпов");
         Text t8 = textBuild(") ");
         Text out = textBuild("= ?");
         hBox1.getChildren().addAll(t0, snrp, t1, kkd, t2, kkdo, t3, kpomrp, t4_2);
@@ -60,7 +60,7 @@ public class VacationN {
                         kkdnvgov2D = Double.parseDouble(kkdnvgov2.getText());
 
 
-                out.setText("=" + df.format((snrpD / kkdD * kkdoD - 24.4f * kpomrpD + (29.4f / kkdnm1D * kkdnvgov1D + 29.4f / kkdnm2D * kkdnvgov2D))));
+                out.setText("= " + df.format((snrpD / kkdD * kkdoD - 24.4f * kpomrpD + (29.4f / kkdnm1D * kkdnvgov1D + 29.4f / kkdnm2D * kkdnvgov2D))));
             } catch (Exception e) {
                 new Notification("уведомление", "Заполните все поля");
             }
@@ -70,6 +70,6 @@ public class VacationN {
                 "Снрп - Сумма начислений за расчётный период\n" +
                 "Ккд - количество колендарных дней\n" +
                 "Ккдо - количество колендарных дней отпусков\n" +
-                "ккд-Количество календарных дней");
+                "Ккд-Количество календарных дней");
     }
 }

@@ -23,10 +23,11 @@ public class MainController {
     public ComboBox<Planet> functionSheet;
     public Button score;
     public VBox vBox;
-    static StageDialog stageDialog;
+    private static StageDialog stageDialog;
     public HBox HBoxButtons;
 
     public void initialize() {
+        score.setText(score.getText().toUpperCase());
         ChangeListener<Planet> changeListener = new ChangeListener<Planet>() {
             @Override
             public void changed(ObservableValue<? extends Planet> observable, Planet oldValue, Planet newValue) {
@@ -65,7 +66,7 @@ public class MainController {
     }
 
 
-    public ObservableList<Planet> comboBoxLoader() {
+    private ObservableList<Planet> comboBoxLoader() {
         PlanetDAO.load("ртс", "Расчет трудового стажа");
         PlanetDAO.load("рсp", "Расчет суммы отпускных (если расчетный периуд отработан полнастью)");
         PlanetDAO.load("рсnp", "Расчет суммы отпускных (если расчетный периуд отработан не полнастью)");
@@ -73,8 +74,7 @@ public class MainController {
         PlanetDAO.load("ро", "Расчет отпускных");
 
 
-        ObservableList<Planet> list = PlanetDAO.getPlanetList();
-        return list;
+        return PlanetDAO.getPlanetList();
     }
 
 

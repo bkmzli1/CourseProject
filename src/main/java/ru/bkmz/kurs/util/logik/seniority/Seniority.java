@@ -16,15 +16,15 @@ import static ru.bkmz.kurs.util.bulderElements.BuilderElements.*;
 
 
 public class Seniority {
-    static TableView<SeniorityTable> table = new TableView<>();
-    static ArrayList<TableColumn> tableColumns = new ArrayList<>();
-    static ObservableList<SeniorityTable> list = FXCollections.observableArrayList();
-    ArrayList<DatePicker> DatePickerD = new ArrayList<>();
-    ArrayList<DatePicker> DatePickerR = new ArrayList<>();
+    private static TableView<SeniorityTable> table = new TableView<>();
+    private static ArrayList<TableColumn<SeniorityTable, String>> tableColumns = new ArrayList<TableColumn<SeniorityTable, String>>();
+    private static ObservableList<SeniorityTable> list = FXCollections.observableArrayList();
+    private ArrayList<DatePicker> DatePickerD = new ArrayList<>();
+    private ArrayList<DatePicker> DatePickerR = new ArrayList<>();
 
     public Seniority(VBox rootVBox, HBox hBoxButtons, Button score) {
         table = new TableView<>();
-        tableColumns = new ArrayList<>();
+        tableColumns = new ArrayList<TableColumn<SeniorityTable, String>>();
         list = FXCollections.observableArrayList();
         DatePickerD = new ArrayList<>();
         DatePickerR = new ArrayList<>();
@@ -32,13 +32,6 @@ public class Seniority {
         creaseCorundumMin("№ п/п", "id");
         creaseCorundumMax("Дата приема на работу", "dataReception");
         creaseCorundumMax("Дата увольнения", "dateDismissal");
-
-
-
-      /*  for (TableColumn t :
-                tableColumns) {
-            table.getColumns().add(t);
-        }*/
         for (int i = 0; i < tableColumns.size(); i++) {
             table.getColumns().add(tableColumns.get(i));
         }
@@ -51,6 +44,7 @@ public class Seniority {
 
         rootVBox.getChildren().addAll(table);
         Button add = ButtonBuild("Добавить");
+
         add.setOnMouseClicked(event -> {
             listLoader();
         });
@@ -58,10 +52,10 @@ public class Seniority {
         remove.setOnMouseClicked(event -> {
             remove();
         });
-        CheckBox checkBox = new CheckBox("Включая конечную дату");
+        CheckBox checkBox = new CheckBox("Включая конечную дату".toUpperCase());
         checkBox.setId("text");
         checkBox.setMaxHeight(Double.MAX_VALUE);
-        Label label = new Label("Отвер:" + "dd/MM/yyyy");
+        Label label = labelBuild("Трудовой стаж: " + "дд//мм//гггг");
         label.setId("text");
         HBox.setHgrow(label, Priority.ALWAYS);
         label.setMaxHeight(Double.MAX_VALUE);
@@ -69,7 +63,6 @@ public class Seniority {
         listLoader();
 
         score.setOnMouseClicked(event -> {
-            //TODO  модульные числа
             try {
 
 
@@ -100,9 +93,8 @@ public class Seniority {
                 m = mD - mR;
                 d = dD - dR;
 
-                label.setText("Отвер:" + d + "/" + m + "/" + y);
+                label.setText("Трудовой стаж: " + Math.abs(d) + "/" + Math.abs(m) + "/" + Math.abs(y));
             } catch (NumberFormatException e) {
-                e.printStackTrace();
                 new Notification("уведомление", "Заполните все поля");
             }
         });
@@ -115,6 +107,7 @@ public class Seniority {
         hBoxButtons.getChildren().add(0, checkBox);
         hBoxButtons.getChildren().add(0, label);
         //infBilder(rootVBox, "Ком - количество отработаных месяцев");
+        add.setCancelButton(true);
     }
 
 

@@ -9,6 +9,10 @@ public class Main extends Application {
 
     public static StageStandart stageStandart;
     public static Stage stage;
+    //FIXME
+    // сделай описание нормальнок
+    // проверить расчёты
+
 
 
     public static void main(String[] args) {
@@ -29,8 +33,8 @@ public class Main extends Application {
         setUserAgentStylesheet(STYLESHEET_CASPIAN);
         stageStandart = new StageStandart("main", false,
                 stage, "HR calculator");
-        this.stage = stageStandart.getStage();
-        this.stage.setMinWidth(806.0);
-        this.stage.setMinHeight(420.0);
+        Main.stage = stageStandart.getStage();
+        Main.stage.setMinWidth(806.0f);
+        Main.stage.setMinHeight(420.0f);
     }
 }
