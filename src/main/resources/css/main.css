@@ -10,7 +10,7 @@
 
     -fx-fill: #000000;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
-    -fx-font-weight: 900px;
+    -fx-font-weight: 900;
 
 
 }
@@ -20,7 +20,7 @@
 
     -fx-fill: #000000;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
-    -fx-font-weight: 900px;
+    -fx-font-weight: 900;
 
 }
 
@@ -30,7 +30,7 @@
 
     -fx-fill: #000000;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
-    -fx-font-weight: 900px;
+    -fx-font-weight: 900;
 
 }
 .text{
@@ -39,7 +39,7 @@
 
     -fx-fill: #000000;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
-    -fx-font-weight: 900px;
+    -fx-font-weight: 900;
 
 }
 .menu-bar {
@@ -54,6 +54,6 @@
 
     -fx-fill: #000000;
     -fx-effect: innershadow(three-pass-box, rgba(255, 255, 255, 1), 22, 0.0, 0, 22);
-    -fx-font-weight: 900px;
+    -fx-font-weight: 900;
 
 }
