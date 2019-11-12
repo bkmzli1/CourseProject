@@ -9,14 +9,14 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import ru.bkmz.kurs.Main;
-import ru.bkmz.kurs.util.Plant.Planet;
-import ru.bkmz.kurs.util.Plant.PlanetDAO;
-import ru.bkmz.kurs.util.Stage.StageDialog;
-import ru.bkmz.kurs.util.logik.DayOtpusk;
-import ru.bkmz.kurs.util.logik.seniority.Seniority;
-import ru.bkmz.kurs.util.logik.sickLeave.SickLeave;
-import ru.bkmz.kurs.util.logik.vacation.Vacation;
-import ru.bkmz.kurs.util.logik.vacation.VacationN;
+import ru.bkmz.kurs.util.pane.Planet;
+import ru.bkmz.kurs.util.pane.PlanetDAO;
+import ru.bkmz.kurs.util.stage.StageDialog;
+import ru.bkmz.kurs.util.logics.dayOtpusk.DayOtpusk;
+import ru.bkmz.kurs.util.logics.seniority.Seniority;
+import ru.bkmz.kurs.util.logics.sckLeave.SickLeave;
+import ru.bkmz.kurs.util.logics.vacation.Vacation;
+import ru.bkmz.kurs.util.logics.vacation.VacationN;
 
 
 public class MainController {
@@ -28,29 +28,26 @@ public class MainController {
 
     public void initialize() {
         score.setText(score.getText().toUpperCase());
-        ChangeListener<Planet> changeListener = new ChangeListener<Planet>() {
-            @Override
-            public void changed(ObservableValue<? extends Planet> observable, Planet oldValue, Planet newValue) {
-                vBox.getChildren().clear();
-                HBoxButtons.getChildren().clear();
-                HBoxButtons.getChildren().add(score);
-                switch (newValue.getCode()) {
-                    case "ртс":
-                        new Seniority(vBox, HBoxButtons, score);
-                        break;
-                    case "рсp":
-                        new Vacation(vBox, HBoxButtons, score);
-                        break;
-                    case "рсnp":
-                        new VacationN(vBox, HBoxButtons, score);
-                        break;
-                    case "рбл":
-                        new SickLeave(vBox, HBoxButtons, score);
-                        break;
-                    case "ро":
-                        new DayOtpusk(vBox, HBoxButtons, score);
-                        break;
-                }
+        ChangeListener<Planet> changeListener = (observable, oldValue, newValue) -> {
+            vBox.getChildren().clear();
+            HBoxButtons.getChildren().clear();
+            HBoxButtons.getChildren().add(score);
+            switch (newValue.getCode()) {
+                case "ртс":
+                    new Seniority(vBox, HBoxButtons, score);
+                    break;
+                case "рсp":
+                    new Vacation(vBox, HBoxButtons, score);
+                    break;
+                case "рсnp":
+                    new VacationN(vBox, HBoxButtons, score);
+                    break;
+                case "рбл":
+                    new SickLeave(vBox, HBoxButtons, score);
+                    break;
+                case "ро":
+                    new DayOtpusk(vBox, HBoxButtons, score);
+                    break;
             }
         };
 

@@ -1,8 +1,8 @@
 package ru.bkmz.kurs;
 
+import ru.bkmz.kurs.util.stage.StageStandart;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import ru.bkmz.kurs.util.Stage.StageStandart;
 
 
 public class Main extends Application {
@@ -10,10 +10,6 @@ public class Main extends Application {
     public static StageStandart stageStandart;
     public static Stage stage;
     //FIXME
-    // сделай описание нормальнок
-    // проверить расчёты
-
-
 
     public static void main(String[] args) {
         for (String arg :
@@ -22,6 +18,7 @@ public class Main extends Application {
         }
         launch(args);
     }
+
 
     @Override
     public void init() throws Exception {

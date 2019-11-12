@@ -5,8 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
-
-import ru.bkmz.kurs.util.image.WrappedImageView;
+import ru.bkmz.kurs.util.build.WrappedImageView;
 
 import java.io.InputStream;
 
@@ -22,10 +21,10 @@ public class InfoController {
     private InputStream inputStreamVK = ClassLoader.class.getResourceAsStream("/image/vk.png");
     private InputStream inputStreamGoogle = ClassLoader.class.getResourceAsStream("/image/gmail.png");
 
-    Image imageAether = new Image(inputStreamAether);
-    Image imageGit = new Image(inputStreamGit);
-    Image imageVk = new Image(inputStreamVK);
-    Image imageGoogle = new Image(inputStreamGoogle);
+    private Image imageAether = new Image(inputStreamAether);
+    private Image imageGit = new Image(inputStreamGit);
+    private Image imageVk = new Image(inputStreamVK);
+    private Image imageGoogle = new Image(inputStreamGoogle);
 
 
     public void initialize() {
@@ -40,7 +39,7 @@ public class InfoController {
 
 
     private void imageBuilder(Image image, String url, VBox vBox) {
-        WrappedImageView imageV = null;
+        WrappedImageView imageV;
 
         imageV = new WrappedImageView(image, url);
 

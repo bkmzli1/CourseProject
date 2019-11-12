@@ -3,7 +3,7 @@ plugins {
     id 'java'
     id 'edu.sc.seis.launch4j' version '2.4.6'
 }
-def versions = '1.1.5.6'
+def versions = '1.1.5.7'
 launch4j {
     mainClassName = 'ru.bkmz.kurs.Main'
     outfile = "HR calculator "+versions+"V.exe"
@@ -16,6 +16,7 @@ launch4j {
     //launch4j.jreMinVersion = "1.8.0_221"
     internalName = "HR calculator"
 }
+
 
 apply plugin: "edu.sc.seis.launch4j"
 group 'HR calculator'
