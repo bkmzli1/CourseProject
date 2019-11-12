@@ -3,7 +3,7 @@ plugins {
     id 'java'
     id 'edu.sc.seis.launch4j' version '2.4.6'
 }
-def versions = '1.1.5.4'
+def versions = '1.1.5.6'
 launch4j {
     mainClassName = 'ru.bkmz.kurs.Main'
     outfile = "HR calculator "+versions+"V.exe"
