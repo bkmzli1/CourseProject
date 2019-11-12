@@ -10,15 +10,9 @@
             <children>
             <MenuBar>
               <menus>
-                <Menu id="menu" mnemonicParsing="false" text="File">
-                    <items>
-                    <MenuItem id="menu" mnemonicParsing="false" onAction="#close" text="Close" />
-                        <MenuItem id="menu" mnemonicParsing="false" onAction="#size" text="size" />
-                  </items>
-                </Menu>
-                <Menu id="menu" mnemonicParsing="false" text="Help">
+                <Menu id="menu" mnemonicParsing="false" text="ПОМОЩЬ">
                   <items>
-                    <MenuItem id="menu" mnemonicParsing="false" onAction="#about" text="About" />
+                    <MenuItem id="menu" mnemonicParsing="false" onAction="#about" text="СВЯЗЬ" />
                   </items>
                 </Menu>
               </menus>

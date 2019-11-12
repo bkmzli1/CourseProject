@@ -23,9 +23,8 @@ public class SickLeave {
         TextField kdb = textFieldBuild("", "КДБ");
         Text out = textBuild("= ?");
         HBox hBox = hBoxBulder();
-        Button b = ButtonBuild("123");
         VBox.setVgrow(hBox, Priority.SOMETIMES);
-        hBox.getChildren().addAll(text2, sdz, text3, proc, text4, kdb, out,b);
+        hBox.getChildren().addAll(text2, sdz, text3, proc, text4, kdb, out);
         vBox.getChildren().addAll(hBox);
         score.setOnMouseClicked(event -> {
             try {

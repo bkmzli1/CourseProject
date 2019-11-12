@@ -1,6 +1,7 @@
 package ru.bkmz.kurs.util.Stage;
 
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -12,13 +13,15 @@ import ru.bkmz.kurs.Main;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Objects;
 
-import static ru.bkmz.kurs.util.Stage.StageStandart.loader2;
 
 public class StageDialog {
     Stage newWindow = new Stage();
 
     public StageDialog() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/" + "info" + ".fxml")));
         StackPane secondaryLayout = new StackPane();
 
 
@@ -32,11 +35,11 @@ public class StageDialog {
 
         // Set position of second window, related to primary window.
         try {
-            loader2.load();
+            loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Parent root = loader2.getRoot();
+        Parent root = loader.getRoot();
         InputStream inputStream = ClassLoader.class.getResourceAsStream("/image/fon icon.png");
         try {
             Image image = new Image(inputStream);

@@ -17,10 +17,8 @@ import java.util.Objects;
 public class StageStandart extends Stage {
     private boolean follScren;
     private Stage stage;
-    static FXMLLoader loader2 = new FXMLLoader();
-
     public StageStandart(String name, boolean follScren, Stage stage, String nameStage) {
-        loader2.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/" + "info" + ".fxml")));
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/" + name + ".fxml")));
         try {

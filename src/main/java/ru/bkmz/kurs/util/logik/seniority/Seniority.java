@@ -48,7 +48,7 @@ public class Seniority {
         add.setOnMouseClicked(event -> {
             listLoader();
         });
-        Button remove = ButtonBuild("Удалить");
+        Button remove = ButtonBuild("Удалить всё");
         remove.setOnMouseClicked(event -> {
             remove();
         });
@@ -93,7 +93,7 @@ public class Seniority {
                 m = mD - mR;
                 d = dD - dR;
 
-                label.setText("Трудовой стаж: " + Math.abs(d) + "/" + Math.abs(m) + "/" + Math.abs(y));
+                label.setText("Трудовой стаж: ".toUpperCase() + Math.abs(d) + "/" + Math.abs(m) + "/" + Math.abs(y));
             } catch (NumberFormatException e) {
                 new Notification("уведомление", "Заполните все поля");
             }
