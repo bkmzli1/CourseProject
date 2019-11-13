@@ -17,8 +17,7 @@ jobs:
       echo 'Docker login'
       docker login -uS DOCKER_HUB -p $DOCKER_HUB_KEY
       echo "Running build..."
-      docker build -t aimvector/marcelio: 
-      ui-content-latest
+      docker build -t aimvector/marcelio:ui-content-latest
       echo 'Pushing image...
-      docker push aim vector/marcelo: ui-content-latest
+      docker push aimvector/marcelo:ui-content-latest
       echo 'Done!'
