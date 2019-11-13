@@ -7,7 +7,6 @@ import ru.bkmz.kurs.util.stage.StageStandart;
 
 public class Main extends Application {
 
-    public static StageStandart stageStandart;
     public static Stage stage;
 
     public static void main(String[] args) {
@@ -28,7 +27,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         Main.stage = stage;
         setUserAgentStylesheet(STYLESHEET_CASPIAN);
-        stageStandart = new StageStandart("main", false,
+        new StageStandart("main", false,
                 stage, "HR calculator");
         Main.stage.setMinWidth(875.3333129882812d);
         Main.stage.setMinHeight(647.3333129882812d);

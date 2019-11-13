@@ -15,7 +15,7 @@ import java.util.Objects;
 
 
 public class StageStandart extends Stage {
-    private boolean follScren;
+
     public StageStandart(String name, boolean follScren, Stage stage, String nameStage) {
 
         FXMLLoader loader = new FXMLLoader();
@@ -56,9 +56,4 @@ public class StageStandart extends Stage {
 
 
     }
-
-    public boolean isFollScren() {
-        return follScren;
-    }
-
 }
