@@ -1,20 +1,23 @@
-name: Java CI
-
-on: 
-  push:
-    branches: 
-      - master
-
+name: CI
+  on:
+    push:
+      branches:
+        - master
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
-    steps:
+  runs-on: ubuntu-latest
+  steps:
     - uses: actions/checkout@v1
     - name: build
-      uses: actions/setup-java@v1
-      with:
-        java-version: 1.8
-    - name: Build with Gradle
-      run: ./gradlew build
+  env:
+   DOCKER_HUB: secrets. DOCKER_HUB
+   DOCKER_HUB_KEY: $ secrets. DOCKER_HUB_KEY
+  run: |
+    ls -1
+    echo 'Docker login'
+    docker login -uS DOCKER_HUB -p $DOCKER_HUB_KEY
+    echo "Running build..."
+    docker build -t aimvector/marcelio: ui-content-latest
+    echo 'Pushing image...
+    docker push aim vector/marcelo: ui-content-latest
+    echo 'Done!'
