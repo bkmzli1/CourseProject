@@ -8,7 +8,7 @@ import ru.bkmz.kurs.util.pane.Notification;
 
 import java.text.DecimalFormat;
 
-import static ru.bkmz.kurs.util.build.BuilderElements.textFieldBuild;
+import static ru.bkmz.kurs.build.BuilderElements.textFieldBuild;
 
 public class Holiday {
     public Holiday(VBox vBox, Button score, Label out) {

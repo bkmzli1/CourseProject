@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
-import ru.bkmz.kurs.util.build.WrappedImageView;
+import ru.bkmz.kurs.build.WrappedImageView;
 
 import java.io.InputStream;
 

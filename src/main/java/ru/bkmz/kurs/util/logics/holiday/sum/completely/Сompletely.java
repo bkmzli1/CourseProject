@@ -6,12 +6,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
-import ru.bkmz.kurs.Main;
 import ru.bkmz.kurs.util.pane.Notification;
 
 import java.text.DecimalFormat;
 
-import static ru.bkmz.kurs.util.build.BuilderElements.*;
+import static ru.bkmz.kurs.build.BuilderElements.*;
 
 
 public class Сompletely {

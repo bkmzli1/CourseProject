@@ -9,7 +9,7 @@ import javafx.scene.layout.VBox;
 
 import java.text.DecimalFormat;
 
-import static ru.bkmz.kurs.util.build.BuilderElements.textFieldBuild;
+import static ru.bkmz.kurs.build.BuilderElements.textFieldBuild;
 
 public class InCompletely {
     public InCompletely(VBox vBox, Button score, Label out) {

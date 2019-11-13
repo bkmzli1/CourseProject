@@ -1,4 +1,4 @@
-package ru.bkmz.kurs.util.build;
+package ru.bkmz.kurs.build;
 
 import javafx.application.Platform;
 import javafx.scene.effect.Glow;

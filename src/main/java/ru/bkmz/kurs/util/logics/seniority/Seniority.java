@@ -8,13 +8,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import ru.bkmz.kurs.Main;
 import ru.bkmz.kurs.util.pane.Notification;
 
 import java.util.ArrayList;
 
-import static ru.bkmz.kurs.util.build.BuilderElements.*;
+import static ru.bkmz.kurs.build.BuilderElements.*;
 
 
 public class Seniority {

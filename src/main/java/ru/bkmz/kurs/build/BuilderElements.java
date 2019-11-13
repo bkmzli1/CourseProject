@@ -1,4 +1,4 @@
-package ru.bkmz.kurs.util.build;
+package ru.bkmz.kurs.build;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
