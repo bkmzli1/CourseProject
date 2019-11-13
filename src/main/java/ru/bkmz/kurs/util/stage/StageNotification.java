@@ -16,7 +16,7 @@ public class StageNotification {
     public StageNotification(String name, Modality applicationModal){
         Stage newWindow = new Stage();
         newWindow.initModality(applicationModal);
-        newWindow.initOwner(Main.stageStandart.getStage());
+        newWindow.initOwner(Main.stage);
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml\\" + name + ".fxml")));
         try {

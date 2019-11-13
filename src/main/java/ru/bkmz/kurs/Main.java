@@ -1,15 +1,14 @@
 package ru.bkmz.kurs;
 
-import ru.bkmz.kurs.util.stage.StageStandart;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import ru.bkmz.kurs.util.stage.StageStandart;
 
 
 public class Main extends Application {
 
     public static StageStandart stageStandart;
     public static Stage stage;
-    //FIXME
 
     public static void main(String[] args) {
         for (String arg :
@@ -27,11 +26,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        Main.stage = stage;
         setUserAgentStylesheet(STYLESHEET_CASPIAN);
         stageStandart = new StageStandart("main", false,
                 stage, "HR calculator");
-        Main.stage = stageStandart.getStage();
-        Main.stage.setMinWidth(806.0f);
-        Main.stage.setMinHeight(420.0f);
+        Main.stage.setMinWidth(875.3333129882812d);
+        Main.stage.setMinHeight(647.3333129882812d);
     }
 }

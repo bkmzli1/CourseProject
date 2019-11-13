@@ -31,7 +31,7 @@ public class StageDialog {
         // Specifies the modality for new window.
 
         // Specifies the owner Window (parent) for new window
-        newWindow.initOwner(Main.stageStandart.getStage());
+        newWindow.initOwner(Main.stage);
 
         // Set position of second window, related to primary window.
         try {

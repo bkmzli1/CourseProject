@@ -12,7 +12,7 @@ public class PlanetDAO {
     }
 
     public static void load(String code, String name) {
-        Planet earth = new Planet(code, name.toUpperCase());
+        Planet earth = new Planet(code, name);
         arrayList.add(earth);
 
         reload();

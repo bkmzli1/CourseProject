@@ -16,7 +16,6 @@ import java.util.Objects;
 
 public class StageStandart extends Stage {
     private boolean follScren;
-    private Stage stage;
     public StageStandart(String name, boolean follScren, Stage stage, String nameStage) {
 
         FXMLLoader loader = new FXMLLoader();
@@ -37,10 +36,7 @@ public class StageStandart extends Stage {
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getClassLoader().getResource("css/main.css")).toExternalForm());
         stage.setScene(scene);
         stage.setTitle(nameStage);
-        Dimension sSize = Toolkit.getDefaultToolkit ().getScreenSize ();
 
-        stage.setHeight(sSize.height/2f);
-        stage.setWidth(sSize.width/2f);
         InputStream inputStream = ClassLoader.class.getResourceAsStream("/image/fon icon.png");
         try {
             Image image = new Image(inputStream);
@@ -55,7 +51,6 @@ public class StageStandart extends Stage {
             }
         });
         stage.show();
-        this.stage = stage;
         //this.follScren = stage.isMaximized();
         //stage.setResizable(false);
 
@@ -66,7 +61,4 @@ public class StageStandart extends Stage {
         return follScren;
     }
 
-    public Stage getStage() {
-        return stage;
-    }
 }

@@ -8,6 +8,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import ru.bkmz.kurs.Main;
 import ru.bkmz.kurs.util.pane.Notification;
 
 import java.util.ArrayList;
@@ -16,19 +18,21 @@ import static ru.bkmz.kurs.util.build.BuilderElements.*;
 
 
 public class Seniority {
-    private static TableView<SeniorityTable> table = new TableView<>();
-    private static ArrayList<TableColumn<SeniorityTable, String>> tableColumns ;
+
+
+    private static TableView<SeniorityTable> table;
+    private static ArrayList<TableColumn<SeniorityTable, String>> tableColumns;
     private static ObservableList<SeniorityTable> list = FXCollections.observableArrayList();
     private ArrayList<DatePicker> DatePickerD;
     private ArrayList<DatePicker> DatePickerR;
 
-    public Seniority(VBox rootVBox, HBox hBoxButtons, Button score) {
+    public Seniority(VBox vBox, Button score, Label out) {
+
         table = new TableView<>();
         tableColumns = new ArrayList<>();
         list = FXCollections.observableArrayList();
         DatePickerD = new ArrayList<>();
         DatePickerR = new ArrayList<>();
-        list = FXCollections.observableArrayList();
         creaseCorundumMin("№ п/п", "id");
         creaseCorundumMax("Дата приема на работу", "dataReception");
         creaseCorundumMax("Дата увольнения", "dateDismissal");
@@ -36,39 +40,34 @@ public class Seniority {
             table.getColumns().add(tableColumn);
         }
 
+
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         table.setTableMenuButtonVisible(true);
         VBox.setVgrow(table, Priority.ALWAYS);
 
 
-        rootVBox.getChildren().addAll(table);
-        Button add = ButtonBuild("Добавить");
+        vBox.getChildren().addAll(table);
+        Button add = buttonBuild("Добавить");
 
         add.setOnMouseClicked(event -> {
             listLoader();
         });
-        Button remove = ButtonBuild("Удалить всё");
+        Button remove = buttonBuild("Удалить всё");
         remove.setOnMouseClicked(event -> {
             remove();
         });
         CheckBox checkBox = new CheckBox("Включая конечную дату".toUpperCase());
         checkBox.setId("text");
         checkBox.setMaxHeight(Double.MAX_VALUE);
-        Label label = labelBuild("Трудовой стаж: " + "дд//мм//гггг");
-        label.setId("text");
-        HBox.setHgrow(label, Priority.ALWAYS);
-        label.setMaxHeight(Double.MAX_VALUE);
-        label.setMaxWidth(Double.MAX_VALUE);
         listLoader();
-
         score.setOnMouseClicked(event -> {
             try {
 
 
                 int yD = 0, mD = 0, dD = 0;
                 int yR = 0, mR = 0, dR = 0;
-                int y, m , d ;
+                int y, m, d;
 
                 for (DatePicker dp :
                         DatePickerD) {
@@ -93,21 +92,20 @@ public class Seniority {
                 m = mD - mR;
                 d = dD - dR;
 
-                label.setText("Трудовой стаж: ".toUpperCase() + Math.abs(d) + "/" + Math.abs(m) + "/" + Math.abs(y));
+                out.setText("Ответ: Дней " + Math.abs(d) + ", Месецев " + Math.abs(m) + ", Лет " + Math.abs(y));
             } catch (NumberFormatException e) {
                 new Notification("уведомление", "Заполните все поля");
             }
         });
 
-        VBox vBox = vBoxBulder();
         HBox.setHgrow(vBox, Priority.ALWAYS);
         VBox.setVgrow(vBox, Priority.ALWAYS);
-        vBox.getChildren().addAll(add, remove);
-        hBoxButtons.getChildren().add(0, vBox);
-        hBoxButtons.getChildren().add(0, checkBox);
-        hBoxButtons.getChildren().add(0, label);
+        vBox.getChildren().addAll(out, add, remove, score);
+
         //infBilder(rootVBox, "Ком - количество отработаных месяцев");
         add.setCancelButton(true);
+
+
     }
 
 
@@ -160,6 +158,4 @@ public class Seniority {
         tableColumns.add(tableColumn);
 
     }
-
-
 }

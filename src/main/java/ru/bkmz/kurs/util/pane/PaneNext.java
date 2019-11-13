@@ -20,7 +20,7 @@ public class PaneNext {
             public void run() {
                 try {
 
-                    Stage stage = Main.stageStandart.getStage();
+                    Stage stage = Main.stage;
 
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(name)));
 

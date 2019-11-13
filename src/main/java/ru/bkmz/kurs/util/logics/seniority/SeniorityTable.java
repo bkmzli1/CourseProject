@@ -28,6 +28,7 @@ public class SeniorityTable {
                     return "";
                 }
             }
+
             @Override
             public LocalDate fromString(String string) {
                 if (string != null && !string.isEmpty()) {
@@ -41,10 +42,10 @@ public class SeniorityTable {
         this.dataReception = datePickerR;
         this.dateDismissal = DatePickerD;
         this.dataReception.setMaxWidth(Double.MAX_VALUE);
-        this.dataReception.setPromptText("dd/MM/yyyy");
+        this.dataReception.setPromptText("дд/мм/гггг");
         this.dataReception.setConverter(converter);
         this.dateDismissal.setMaxWidth(Double.MAX_VALUE);
-        this.dateDismissal.setPromptText("dd/MM/yyyy");
+        this.dateDismissal.setPromptText("дд/мм/гггг");
         this.dateDismissal.setConverter(converter);
     }
 

@@ -15,7 +15,6 @@ import javafx.scene.text.TextAlignment;
 
 public class BuilderElements {
     private static TextArea textAreaBuild(String value) {
-        value = value.toUpperCase();
         TextArea textArea = new TextArea(value);
 
         textArea.setMaxHeight(Double.MAX_VALUE);
@@ -29,7 +28,6 @@ public class BuilderElements {
     }
 
     public static TextField textFieldBuild(String value, String promptText) {
-        promptText = promptText.toUpperCase();
         TextField textField = new TextField(value);
         textField.setPromptText(promptText);
         textField.setAlignment(Pos.CENTER);
@@ -41,7 +39,6 @@ public class BuilderElements {
     }
 
     public static Text textBuild(String value) {
-        value = value.toUpperCase();
         Text text = new Text(value.replace("*","×").replace("/","÷"));
         text.setTextAlignment(TextAlignment.CENTER);
         text.setId("text");
@@ -50,8 +47,10 @@ public class BuilderElements {
         return text;
     }
 
+
+
     public static Label  labelBuild(String value) {
-        value = value.toUpperCase();
+
         Label label = new Label(value.replace("*","×").replace("/","÷").replace("÷÷","/"));
         label.setTextAlignment(TextAlignment.CENTER);
         label.setId("text");
@@ -71,8 +70,7 @@ public class BuilderElements {
             }
         });
     }
-    public  static Button ButtonBuild(String value){
-        value = value.toUpperCase();
+    public  static Button buttonBuild(String value){
         Button button = new Button(value);
         button.setAlignment(Pos.CENTER);
         button.setMaxWidth(Double.MAX_VALUE);
