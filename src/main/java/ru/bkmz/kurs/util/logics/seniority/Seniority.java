@@ -75,6 +75,7 @@ public class Seniority {
                     yD += Integer.parseInt(dateS[2]);
 
                 }
+
                 for (DatePicker dp :
                         DatePickerR) {
                     String[] dateS = dp.getEditor().getText().split("/");
@@ -83,14 +84,17 @@ public class Seniority {
                     yR += Integer.parseInt(dateS[2]);
 
                 }
-                if (checkBox.isSelected()) {
-                    dD += 1;
-                }
+
                 y = yD - yR;
                 m = mD - mR;
                 d = dD - dR;
 
-                out.setText("Ответ: Дней " + Math.abs(d) + ", Месецев " + Math.abs(m) + ", Лет " + Math.abs(y));
+
+                if (checkBox.isSelected()) {
+                    out.setText("Ответ: Дней " + Math.abs(d+1) + ", Месецев " + Math.abs(m) + ", Лет " + Math.abs(y));
+                }else {
+                    out.setText("Ответ: Дней " + Math.abs(d) + ", Месецев " + Math.abs(m) + ", Лет " + Math.abs(y));
+                }
             } catch (NumberFormatException e) {
                 new Notification("уведомление", "Заполните все поля");
             }
@@ -98,9 +102,8 @@ public class Seniority {
 
         HBox.setHgrow(vBox, Priority.ALWAYS);
         VBox.setVgrow(vBox, Priority.ALWAYS);
-        vBox.getChildren().addAll(out, add, remove, score);
 
-        //infBilder(rootVBox, "Ком - количество отработаных месяцев");
+        vBox.getChildren().addAll(out,checkBox, add, remove, score);
         add.setCancelButton(true);
 
 
@@ -108,7 +111,10 @@ public class Seniority {
 
 
     private void remove() {
+        DatePickerD.clear();
+        DatePickerR.clear();
         list.clear();
+        listLoader();
         table.setItems(list);
     }
 

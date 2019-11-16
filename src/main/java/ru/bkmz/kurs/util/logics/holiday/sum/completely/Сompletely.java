@@ -17,13 +17,13 @@ public class Сompletely {
     public Сompletely(VBox vBox, Button score, Label out) {
         TextField snrp = textFieldBuild("", "Сумма начислений за расчётный период");
         TextField kkd = textFieldBuild("", "Количество колендарных дней отпусков");
-        DecimalFormat df = new DecimalFormat("0.###");
+
         Button button = buttonBuild("");
         score.setOnMouseClicked(event -> {
             try {
                 double dSnrp = Double.parseDouble(snrp.getText().replace(",", "."));
                 double dKkd = Double.parseDouble(kkd.getText().replace(",", "."));
-                out.setText("Ответ: " + df.format((dSnrp / 12f / 29.4f * dKkd)));
+                out.setText("Ответ: " + (dSnrp / 12f / 29.4f * dKkd));
             } catch (Exception e) {
                 new Notification("уведомление", "Заполните все поля");
             }
@@ -35,14 +35,14 @@ public class Сompletely {
 
     }
     void tF(TextField kkd, TextField snrp, TextField textField, Label out){
-        DecimalFormat df = new DecimalFormat("0.###");
+
         textField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 try {
                     double dSnrp = Double.parseDouble(snrp.getText().replace(",", "."));
                     double dKkd = Double.parseDouble(kkd.getText().replace(",", "."));
-                    out.setText("Ответ: " + df.format((dSnrp / 12f / 29.4f * dKkd)));
+                    out.setText("Ответ: " + (dSnrp / 12f / 29.4f * dKkd));
                 } catch (Exception e) {
                 }
             }

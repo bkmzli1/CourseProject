@@ -13,11 +13,11 @@ import static ru.bkmz.kurs.build.BuilderElements.textFieldBuild;
 public class Holiday {
     public Holiday(VBox vBox, Button score, Label out) {
         TextField mes = textFieldBuild("", "Количество отработаных месяцев");
-        DecimalFormat df = new DecimalFormat("0.###");
+
         score.setOnMouseClicked(event -> {
             try {
                 double dMes = Double.parseDouble(mes.getText());
-                out.setText("Ответ: "  + df.format((28f / 12f * dMes)));
+                out.setText("Ответ: "  + (28f / 12f * dMes));
             } catch (Exception e) {
                 new Notification("уведомление", "Заполните все поля");
             }
@@ -27,13 +27,13 @@ public class Holiday {
     vBox.getChildren().addAll(mes);
     }
     void tF(TextField mes, Label out){
-        DecimalFormat df = new DecimalFormat("0.###");
+
         mes.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 try {
                     double dMes = Double.parseDouble(mes.getText());
-                    out.setText("Ответ: "  + df.format((28f / 12f * dMes)));
+                    out.setText("Ответ: "  + (28f / 12f * dMes));
                 } catch (Exception e) {
                 }
             }

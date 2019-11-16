@@ -35,7 +35,7 @@ public class Leave {
     }
 
     void tF(TextField sdz, TextField proc, TextField kdb, Label out) {
-        DecimalFormat df = new DecimalFormat("0.###");
+
         sdz.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {

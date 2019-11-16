@@ -35,7 +35,7 @@ public class InCompletely {
     }
 
     void tF(TextField snrp, TextField kkd, TextField kkdo, TextField kkdnvgov, TextField kkdnmpov, TextField kkdnm, Label out) {
-        DecimalFormat df = new DecimalFormat("0.###");
+
         snrp.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -49,7 +49,7 @@ public class InCompletely {
                             kkdnmD = Double.parseDouble(kkdnm.getText());
 
 
-                    out.setText("Ответ: " + df.format((snrpD / kkdD * kkdoD - 24.4f * kkdnvgovD + (29.4f / kkdnmD * kkdnmpovD + 29.4f / kkdnmD * kkdnmpovD))));
+                    out.setText("Ответ: " + (snrpD / kkdD * kkdoD - 24.4f * kkdnvgovD + (29.4f / kkdnmD * kkdnmpovD + 29.4f / kkdnmD * kkdnmpovD)));
                 } catch (Exception e) {
                 }
             }
@@ -65,7 +65,7 @@ public class InCompletely {
                             kkdnmpovD = Double.parseDouble(kkdnmpov.getText()),
                             kkdnmD = Double.parseDouble(kkdnm.getText());
 
-                    out.setText("Ответ: " + df.format((snrpD / kkdD * kkdoD - 24.4f * kkdnvgovD + (29.4f / kkdnmD * kkdnmpovD + 29.4f / kkdnmD * kkdnmpovD))));
+                    out.setText("Ответ: " + (snrpD / kkdD * kkdoD - 24.4f * kkdnvgovD + (29.4f / kkdnmD * kkdnmpovD + 29.4f / kkdnmD * kkdnmpovD)));
                 } catch (Exception e) {
                 }
             }
@@ -81,7 +81,7 @@ public class InCompletely {
                             kkdnmpovD = Double.parseDouble(kkdnmpov.getText()),
                             kkdnmD = Double.parseDouble(kkdnm.getText());
 
-                    out.setText("Ответ: " + df.format((snrpD / kkdD * kkdoD - 24.4f * kkdnvgovD + (29.4f / kkdnmD * kkdnmpovD + 29.4f / kkdnmD * kkdnmpovD))));
+                    out.setText("Ответ: " + (snrpD / kkdD * kkdoD - 24.4f * kkdnvgovD + (29.4f / kkdnmD * kkdnmpovD + 29.4f / kkdnmD * kkdnmpovD)));
                 } catch (Exception e) {
                 }
             }
@@ -97,7 +97,7 @@ public class InCompletely {
                             kkdnmpovD = Double.parseDouble(kkdnmpov.getText()),
                             kkdnmD = Double.parseDouble(kkdnm.getText());
 
-                    out.setText("Ответ: " + df.format((snrpD / kkdD * kkdoD - 24.4f * kkdnvgovD + (29.4f / kkdnmD * kkdnmpovD + 29.4f / kkdnmD * kkdnmpovD))));
+                    out.setText("Ответ: " + (snrpD / kkdD * kkdoD - 24.4f * kkdnvgovD + (29.4f / kkdnmD * kkdnmpovD + 29.4f / kkdnmD * kkdnmpovD)));
                 } catch (Exception e) {
                 }
             }
@@ -113,7 +113,7 @@ public class InCompletely {
                             kkdnmpovD = Double.parseDouble(kkdnmpov.getText()),
                             kkdnmD = Double.parseDouble(kkdnm.getText());
 
-                    out.setText("Ответ: " + df.format((snrpD / kkdD * kkdoD - 24.4f * kkdnvgovD + (29.4f / kkdnmD * kkdnmpovD + 29.4f / kkdnmD * kkdnmpovD))));
+                    out.setText("Ответ: " + (snrpD / kkdD * kkdoD - 24.4f * kkdnvgovD + (29.4f / kkdnmD * kkdnmpovD + 29.4f / kkdnmD * kkdnmpovD)));
                 } catch (Exception e) {
                 }
             }
@@ -129,7 +129,7 @@ public class InCompletely {
                             kkdnmpovD = Double.parseDouble(kkdnmpov.getText()),
                             kkdnmD = Double.parseDouble(kkdnm.getText());
 
-                    out.setText("Ответ: " + df.format((snrpD / kkdD * kkdoD - 24.4f * kkdnvgovD + (29.4f / kkdnmD * kkdnmpovD + 29.4f / kkdnmD * kkdnmpovD))));
+                    out.setText("Ответ: " + (snrpD / kkdD * kkdoD - 24.4f * kkdnvgovD + (29.4f / kkdnmD * kkdnmpovD + 29.4f / kkdnmD * kkdnmpovD)));
                 } catch (Exception e) {
                 }
             }

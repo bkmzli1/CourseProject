@@ -1,12 +1,13 @@
-
 plugins {
     id 'java'
     id 'edu.sc.seis.launch4j' version '2.4.6'
 }
-def versions = '1.1.6.1'
+def versions = '1.1.6.3'
+def name = 'HR case calculator '
+def main = 'ru.bkmz.kurs.Main'
 launch4j {
-    mainClassName = 'ru.bkmz.kurs.Main'
-    outfile = "HR calculator "+versions+"V.exe"
+    mainClassName = main
+    outfile = name +versions+".exe"
     version = versions
     textVersion = versions
     companyName = "BkzmLitel"
@@ -14,12 +15,12 @@ launch4j {
     launch4j.language = 'RUSSIAN'
     launch4j.icon = "B:\\fon1 (1).ico"
     //launch4j.jreMinVersion = "1.8.0_221"
-    internalName = "HR calculator"
+    internalName = name
 }
 
 
 apply plugin: "edu.sc.seis.launch4j"
-group 'HR calculator'
+group name
 version versions
 sourceCompatibility = 1.8
 compileJava.options.encoding = "UTF-8"
@@ -38,7 +39,7 @@ jar {
     manifest {
         attributes(
                 'Class-Path': configurations.runtime.files.collect { "lib/$it.name" }.join(' '),
-                'Main-Class': 'ru.bkmz.kurs.Main'
+                'Main-Class': main
         )
     }
 }
