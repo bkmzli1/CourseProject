@@ -1,13 +1,13 @@
 #title{
     -fx-font-size: 20;
-    -fx-font-family: "Arial Black";
+    /* -fx-font-family: "Arial Black";*/
     -fx-fill: #818181;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
     -fx-font-weight: 900;
 }
 #inf{
     -fx-font-size: 15;
-    -fx-font-family: "Arial Black";
+    /* -fx-font-family: "Arial Black";*/
     -fx-fill: #818181;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
     -fx-font-weight: 900;

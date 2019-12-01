@@ -1,17 +1,17 @@
 
 .text {
     -fx-font-size: 15;
-    -fx-font-family: "Arial Black";
+    /* -fx-font-family: "Arial Black";*/
 
     -fx-fill: #000000;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
-    -fx-font-weight: 900;
+    /*-fx-font-weight: 900;*/
 
 }
 
 .button {
     -fx-font-size: 32px;
-    -fx-font-family: "Arial Black";
+    /* -fx-font-family: "Arial Black";*/
     -fx-fill: #818181;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
     -fx-font-weight: 900;
@@ -19,7 +19,7 @@
 
 #text {
     -fx-font-size: 15;
-    -fx-font-family: "Arial Black";
+    /* -fx-font-family: "Arial Black";*/
 
     -fx-fill: #000000;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
@@ -30,7 +30,7 @@
 
 .text-field {
     -fx-font-size: 15;
-    -fx-font-family: "Arial Black";
+    /* -fx-font-family: "Arial Black";*/
 
     -fx-fill: #000000;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
@@ -39,7 +39,7 @@
 
 .text-area {
     -fx-font-size: 15;
-    -fx-font-family: "Arial Black";
+    /* -fx-font-family: "Arial Black";*/
 
     -fx-fill: #000000;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
@@ -48,7 +48,7 @@
 
 .menu {
     -fx-font-size: 15;
-    -fx-font-family: "Arial Black";
+    /* -fx-font-family: "Arial Black";*/
 
     -fx-fill: #000000;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
@@ -57,14 +57,14 @@
 
 .menu-bar {
     -fx-font-size: 15;
-    -fx-font-family: "Arial Black";
+    /* -fx-font-family: "Arial Black";*/
     -fx-fill: #818181;
     -fx-effect: innershadow(three-pass-box, rgba(255, 255, 255, 222), 50, 0, 0, 5);
 }
 
 #text {
     -fx-font-size: 15;
-    -fx-font-family: "Arial Black";
+    /* -fx-font-family: "Arial Black";*/
 
     -fx-fill: #000000;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
@@ -73,7 +73,7 @@
 
 .label {
     -fx-font-size: 15;
-    -fx-font-family: "Arial Black";
+    /* -fx-font-family: "Arial Black";*/
 
     -fx-fill: #000000;
     -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
@@ -82,7 +82,7 @@
 
 .table-view .menu-item {
     -fx-font-size: 15;
-    -fx-font-family: "Arial Black";
+    /* -fx-font-family: "Arial Black";*/
     -fx-fill: #000000;
 
 
@@ -90,7 +90,7 @@
 
 .table-view .menu-bar {
     -fx-font-size: 15;
-    -fx-font-family: "Arial Black";
+    /* -fx-font-family: "Arial Black";*/
     -fx-fill: #818181;
     -fx-effect: innershadow(three-pass-box, rgba(255, 255, 255, 222), 50, 0, 0, 5);
 }
