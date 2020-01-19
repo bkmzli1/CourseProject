@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="567.0" prefWidth="498.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.bkmz.kurs.controller.MainController">
     <children>
         <VBox fx:id="rootVBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -13,7 +12,7 @@
                 <Menu id="menu" mnemonicParsing="false" text="Помощь">
                   <items>
                         <Menu mnemonicParsing="false" text="управление">
-                          <items>
+                            <items>
                             <MenuItem mnemonicParsing="false" onAction="#size" text="размер" />
                               <MenuItem mnemonicParsing="false" text="Что ты тут делаешь? А ну вон отсюда" />
                           </items>
