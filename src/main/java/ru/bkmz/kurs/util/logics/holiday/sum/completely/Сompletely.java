@@ -15,8 +15,8 @@ import static ru.bkmz.kurs.build.BuilderElements.*;
 
 public class Сompletely {
     public Сompletely(VBox vBox, Button score, Label out) {
-        TextField snrp = textFieldBuild("", "Сумма начислений за расчётный период");
-        TextField kkd = textFieldBuild("", "Количество колендарных дней отпусков");
+        TextField snrp = textFieldBuild("", "Сумма начислений за расчётный период"," Срок деятельности юридического лица, исчисляемый в календарных месяцах");
+        TextField kkd = textFieldBuild("", "Количество колендарных дней отпусков","Согласно с законодательством РФ срок основного ежегодного отпуска составляет 28 календарных дня с учетом выходных");
 
         Button button = buttonBuild("");
         score.setOnMouseClicked(event -> {

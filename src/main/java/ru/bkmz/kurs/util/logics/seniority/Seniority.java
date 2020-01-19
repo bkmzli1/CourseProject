@@ -55,7 +55,7 @@ public class Seniority {
         remove.setOnMouseClicked(event -> {
             remove();
         });
-        CheckBox checkBox = new CheckBox("Включая конечную дату".toUpperCase());
+        CheckBox checkBox = new CheckBox("Включая конечную дату");
         checkBox.setId("text");
         checkBox.setMaxHeight(Double.MAX_VALUE);
         listLoader();

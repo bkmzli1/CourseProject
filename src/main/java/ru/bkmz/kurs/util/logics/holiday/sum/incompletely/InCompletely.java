@@ -13,12 +13,12 @@ import static ru.bkmz.kurs.build.BuilderElements.textFieldBuild;
 
 public class InCompletely {
     public InCompletely(VBox vBox, Button score, Label out) {
-        TextField snrp = textFieldBuild("", "Сумма начислений за расчётный период");
+        TextField snrp = textFieldBuild("", "Сумма начислений за расчётный период","срок деятельности юридического лица, исчисляемый в календарных месяцах");
         TextField kkd = textFieldBuild("", "Количество колендарных дней");
-        TextField kkdo = textFieldBuild("", "Количество колендарных дней отпусков");
+        TextField kkdo = textFieldBuild("", "Количество колендарных дней отпусков","Согласно с законодательством РФ срок основного ежегодного отпуска составляет 28 календарных дня с учетом выходных");
         TextField kkdnvgov = textFieldBuild("", "Количество полностью отработанных месяцев в расчетном периоде");
-        TextField kkdnmpov = textFieldBuild("", "Количество календарных дней в неполном месяце, \nприходящихся на отработанное время");
-        TextField kkdnm = textFieldBuild("", "Количество календарных дней в неполном месяце");
+        TextField kkdnmpov = textFieldBuild("", "Количество календарных дней в неполном месяце,приходящихся на отработанное время");
+        TextField kkdnm = textFieldBuild("", "Количество календарных дней в неполном месяце","рассчитывается путем деления среднемесячного числа календарных дней (29,3) на количество календарных дней этого месяца и умножения на количество календарных дней,\n приходящихся на время, отработанное в данном месяце.");
         score.setOnMouseClicked(event -> {
             double snrpD = Double.parseDouble(snrp.getText()),
                     kkdD = Double.parseDouble(kkd.getText()),
