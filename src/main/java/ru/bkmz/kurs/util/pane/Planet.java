@@ -6,11 +6,6 @@ public class Planet {
     private String code;
     private String name;
 
-    public Planet() {
-
-
-    }
-
     Planet(String code, String name) {
 
         this.code = code;

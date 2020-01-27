@@ -3,15 +3,14 @@ package ru.bkmz.kurs.build;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+
+import javax.tools.Tool;
 
 public class BuilderElements {
     private static TextArea textAreaBuild(String value) {
@@ -31,6 +30,18 @@ public class BuilderElements {
         TextField textField = new TextField(value);
         textField.setPromptText(promptText);
         textField.setAlignment(Pos.CENTER);
+        HBox.setHgrow(textField, Priority.ALWAYS);
+        VBox.setVgrow(textField, Priority.ALWAYS);
+        //textField.setId("text");
+        textProperty(textField);
+        return textField;
+    }
+    public static TextField textFieldBuild(String value, String promptText,String help) {
+        TextField textField = new TextField(value);
+        textField.setPromptText(promptText);
+        textField.setAlignment(Pos.CENTER);
+        Tooltip tooltip = new Tooltip(help);
+        Tooltip.install(textField, tooltip);
         HBox.setHgrow(textField, Priority.ALWAYS);
         VBox.setVgrow(textField, Priority.ALWAYS);
         //textField.setId("text");
