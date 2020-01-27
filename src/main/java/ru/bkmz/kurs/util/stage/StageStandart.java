@@ -8,7 +8,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
@@ -16,7 +15,7 @@ import java.util.Objects;
 
 public class StageStandart extends Stage {
 
-    public StageStandart(String name, boolean follScren, Stage stage, String nameStage) {
+    public StageStandart(String name, boolean follScren, boolean resizable, Stage stage, String nameStage,String mainCcs) {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/" + name + ".fxml")));
@@ -32,8 +31,7 @@ public class StageStandart extends Stage {
 
         Parent root = loader.getRoot();
         Scene scene = new Scene(root);
-
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getClassLoader().getResource("css/main.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getClassLoader().getResource("css/"+mainCcs+".css")).toExternalForm());
         stage.setScene(scene);
         stage.setTitle(nameStage);
 
@@ -50,9 +48,10 @@ public class StageStandart extends Stage {
                 System.exit(0);
             }
         });
+
         stage.show();
         //this.follScren = stage.isMaximized();
-        //stage.setResizable(false);
+        stage.setResizable(resizable);
 
 
     }

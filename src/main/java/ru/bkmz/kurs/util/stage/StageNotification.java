@@ -8,6 +8,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import ru.bkmz.kurs.Main;
 
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
@@ -36,6 +37,7 @@ public class StageNotification {
         newWindow.setScene(new Scene(root));
         newWindow.setResizable(false);
         newWindow.show();
+        
     }
 
 

@@ -10,6 +10,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 
+import javax.tools.Tool;
+
 public class BuilderElements {
     private static TextArea textAreaBuild(String value) {
         TextArea textArea = new TextArea(value);
@@ -38,7 +40,8 @@ public class BuilderElements {
         TextField textField = new TextField(value);
         textField.setPromptText(promptText);
         textField.setAlignment(Pos.CENTER);
-        textField.setTooltip(new Tooltip(help));
+        Tooltip tooltip = new Tooltip(help);
+        Tooltip.install(textField, tooltip);
         HBox.setHgrow(textField, Priority.ALWAYS);
         VBox.setVgrow(textField, Priority.ALWAYS);
         //textField.setId("text");
