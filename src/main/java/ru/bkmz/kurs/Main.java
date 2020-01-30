@@ -1,6 +1,5 @@
 package ru.bkmz.kurs;
 
-
 import javafx.application.Application;
 import javafx.stage.Stage;
 import ru.bkmz.kurs.util.stage.StageStandart;
@@ -9,12 +8,12 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
+
 public class Main extends Application {
 
     public static Stage stage;
 
     public static void main(String[] args) throws Exception {
-
         for (String arg :
                 args) {
             System.out.println(arg + ":true");
@@ -47,9 +46,8 @@ public class Main extends Application {
         Main.stage.setWidth(854);
         Main.stage.setHeight(442);
         setUserAgentStylesheet(STYLESHEET_CASPIAN);
-        new StageStandart("main", false, false,
-                stage, "HR calculator","custom");
-
+        new StageStandart("main", false,
+                stage, "HR calculator");
 
     }
 }

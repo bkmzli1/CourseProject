@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="567.0" prefWidth="498.0"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ru.bkmz.kurs.controller.MainController">
+    <children>
+        <VBox fx:id="rootVBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0"
+              AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu id="menu" mnemonicParsing="false" text="Помощь">
+                            <items>
+                                <Menu mnemonicParsing="false" text="управление">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#size" text="размер"/>
+                                        <MenuItem mnemonicParsing="false" text="Что ты тут делаешь? А ну вон отсюда"/>
+                                    </items>
+                                </Menu>
+                                <MenuItem id="menu" mnemonicParsing="false" onAction="#about" text="Связь"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                    <VBox.margin>
+                        <Insets left="-10.0" right="-10.0"/>
+                    </VBox.margin>
+                </MenuBar>
+                <ComboBox fx:id="functionSheet" cache="true" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS"/>
+                <VBox fx:id="vBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0"
+                      VBox.vgrow="ALWAYS">
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                </VBox>
+                <Label id="OUT" fx:id="out" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" text="Ответ:"/>
+                <Button fx:id="score" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Рассчитать"
+                        VBox.vgrow="ALWAYS"/>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>
